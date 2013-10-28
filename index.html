@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  	<meta charset="UTF-8">
+  	<title>S P A C E &#32;</title>
+  	<meta name="author" content="name">
+  	<meta name="description" content="description here">
+  	<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+  	<link rel="stylesheet" href="/stylesheet.css" type="text/css">
+  	<script type="text/javascript" src="//use.typekit.net/oea6usb.js"></script>
+	  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ </head>
+ <body>
+  <div id="person">
+  <div class="firstname"></div>&#32;<div class="lastname"></div>
+  </div>
+
+  <div id="portrait"></div>
+
+  <div id="flickr"></div>
+
+  <div id="text"></div>
+
+  <script>
+    
+    $.get("www.space.jesse-benjamin.com/?url=www.elsewhere.org/pomo/", function (){
+      var pomo = document.getElementById('#post-1182');
+      var value = pomo.val();
+      var $pomo = $('#text');
+      $("#text").text(value);
+    });
+
+  </script>
+
+  <script>
+
+  (function() {
+        var firstname;
+        var lastname;
+        var gender;
+        var title;
+       
+        var url = 'http://api.randomuser.me/0.2/'
+            keyA = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'black', 'white', 'golden', 'silver', 'big', 'small', 'heavy', 'tiny', 'lazy', 'beautiful', 'organic', 'ticklish', 'crazy'],
+            keyB = ['Cat', 'Dog', 'Panda', 'Bear', 'Fish', 'Bird', 'Elephant', 'Tiger', 'Snake', 'Rabbit', 'Peacock', 'Koala', 'Lion', 'Frog', 'Gorilla', 'Meercat', 'Ladybug', 'Butterfly', 'Goose', 'Duck', 'Swan', 'Ostrich', 'Leopard', 'Wolf', 'Mouse'];
+        function randomSeed(a, b){
+            prefix = Math.floor(Math.random() * a.length);
+            suffix = Math.floor(Math.random() * b.length);
+            string = a[prefix]+''+b[suffix];
+            return string;
+        }
+        var getUser = function(s){
+            // Get dat info
+            var output = $.ajax({
+                // Check if a seed parameter is passed.
+                url: (s != undefined ? url+'?seed='+s : url),
+                dataType: 'json',
+                success: function(r){
+                    $('.gen_title').html(r.results[0].user.name.title);
+                    $('.firstname').html(r.results[0].user.name.first);
+                    $('.lastname').html(r.results[0].user.name.last);
+                    $('.gender').html(r.results[0].user.gender);
+                    $('title').html(r.results[0].user.name.last).toUpperCase;
+                
+                firstname = r.results[0].user.name.first;
+                lastname = r.results[0].user.name.last;
+                gender = r.results[0].user.gender;
+                title = r.results[0].user.name.title;
+       
+                }
+            });
+            // return output.success.r.results;
+        }
+        getUser(randomSeed(keyA, keyB));
+ 
+    
+      
+      
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    tags: lastname,
+    tagmode: "any",
+    format: "json"
+    })
+  .done(function( data ) {
+  $.each( data.items, function( i, item ) {
+  $( "<img>" ).attr( "src", item.media.m ).appendTo( "#flickr" );
+    if ( i === 3 ) {
+        return false;
+      }
+    });
+    });
+
+  var url = "http://en.wikipedia.org/w/api.php?action=parse&format=json&callback=?";
+  var page = "New_York"; // your page title, eg. New_York
+
+$.getJSON(url, { 
+  page: page, 
+  limit:1,
+  prop:"text|images", 
+  uselang:"en"
+}, function(data) {
+  var $container = $("#text");
+  $container.append(data['parse']['text']['*']);
+  });
+})();
+
+  </script>
+
+ </body>
+</html>

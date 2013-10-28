@@ -1,0 +1,91 @@
+title {
+	text-transform:capitalize;
+}
+
+
+.firstname {
+	font-family: "europa";
+	font-size: 14px;
+	font-weight:300;
+	letter-spacing:0.2em;
+	text-align:right;
+	display:inline;
+	text-transform:capitalize;
+}
+
+.lastname {
+	font-family: "europa";
+	font-size: 14px;
+	font-weight:300;
+	letter-spacing:0.2em;
+	text-align:left;
+	display:inline;
+	text-transform:capitalize;
+}
+
+#person {
+	width:auto;
+	height:auto;
+	left:50px;
+	top: 50px;
+	margin-right:auto;
+	background-color: #fff;
+	position:fixed;
+	border-bottom: 1px solid #000;
+}
+
+#portrait {
+	width:120px;
+	height:auto;
+	margin-top:100px;
+	left:50px;
+	margin-right:auto;
+	position: absolute;
+}
+
+#portrait img {
+	width:100px;
+	padding:10px;
+}
+
+#text {
+	font-family: "Georgia", serif;
+	font-size: 14px;
+	font-style:regular;
+	color:#000;
+	letter-spacing:0.1em;
+	text-align:center;
+	width:400px;
+	height:auto;
+	margin-top:200px;
+	margin-right:auto;
+	left:50px;
+
+}
+
+#flickr {
+	position:relative;
+	width:220px;
+	height:auto;
+	float:right;
+	margin-right:300px;
+	margin-left:auto;
+}
+
+#flickr img {
+	width: 200px;
+	padding:10px;
+	float: left;
+}
+
+#soundcloud {
+	width:auto;
+	height:auto;
+	top:400px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#soundcloud iframe {
+	height: 100px;
+}
