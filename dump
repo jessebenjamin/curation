@@ -1,0 +1,140 @@
+ <script type="text/javascript" src="/js/method.js"></script>
+ <script type="text/javascript" src="/js/flickr.js"></script>
+
+
+__________________________
+
+
+
+     $.get("space.jesse-benjamin.com/?url=www.elsewhere.org/pomo/", function (){
+      var pomo = document.getElementById('#post-1182');
+      $("#text").innerHTML = pomo.innerHTML;
+    });
+    
+
+    tags: "wint",
+
+      <p>Garland Wint</p>
+
+__________________________
+
+
+        (function() {
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    tags: "wint",
+    tagmode: "any",
+    format: "json"
+    })
+  .done(function( data ) {
+  $.each( data.items, function( i, item ) {
+  $( "<img>" ).attr( "src", item.media.m ).appendTo( "#flickr" );
+    if ( i === 3 ) {
+        return false;
+      }
+    });
+    });
+  });
+
+__________________________
+
+
+  var exoAPI = "http://exoapi.com/api/skyhook/planets/all?sort=[properties.mass]?jsonp=callback";
+  $.get( exoAPI { 
+    name: "11 Com b";
+    tagmode: "any",
+    format: "json"
+    })
+  .done(function( data ) {
+  $.each( data.items, function( i, item ) {
+  $( this ).attr( "name" ).appendTo( 'title' );
+    if ( i === 0 ) {
+        return false;
+      }
+    });
+    });
+__________________________
+
+
+    (function() {
+      var firstname;
+        var lastname;
+        var gender;
+       
+        var url = 'http://api.randomuser.me/0.2/'
+            keyA = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'black', 'white', 'golden', 'silver', 'big', 'small', 'heavy', 'tiny', 'lazy', 'beautiful', 'organic', 'ticklish', 'crazy'],
+            keyB = ['Cat', 'Dog', 'Panda', 'Bear', 'Fish', 'Bird', 'Elephant', 'Tiger', 'Snake', 'Rabbit', 'Peacock', 'Koala', 'Lion', 'Frog', 'Gorilla', 'Meercat', 'Ladybug', 'Butterfly', 'Goose', 'Duck', 'Swan', 'Ostrich', 'Leopard', 'Wolf', 'Mouse'];
+        function randomSeed(a, b){
+            prefix = Math.floor(Math.random() * a.length);
+            suffix = Math.floor(Math.random() * b.length);
+            string = a[prefix]+''+b[suffix];
+            return string;
+        }
+        var getUser = function(s){
+            // Get dat info
+            var output = $.ajax({
+                // Check if a seed parameter is passed.
+                url: (s != undefined ? url+'?seed='+s : url),
+                dataType: 'json',
+                success: function(r){
+                    
+                    $('.firstname').html(r.results[0].user.name.first);
+                    $('.lastname').html(r.results[0].user.name.last);
+                    $('.gender').html(r.results[0].user.gender);
+                
+                firstname = r.results[0].user.name.first;
+                    lastname = r.results[0].user.name.last;
+                    gender = r.results[0].user.gender;
+       
+                }
+            });
+            // return output.success.r.results;
+        }
+        getUser(randomSeed(keyA, keyB));
+ 
+    
+      
+      
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  $.getJSON( flickerAPI, {
+    tags: lastname,
+    tagmode: "any",
+    format: "json"
+    })
+  .done(function( data ) {
+  $.each( data.items, function( i, item ) {
+  $( "<img>" ).attr( "src", item.media.m ).appendTo( "#flickr" );
+    if ( i === 3 ) {
+        return false;
+      }
+    });
+    });
+  })();
+
+__________________________
+
+
+  var wikiAPI = "http://en.wikipedia.org/w/api.php?action=parse&format=json&callback=?";
+$.getJSON(wikiAPI, { 
+  namespaces: lastname, 
+  limit:1,
+  prop:"images", 
+  uselang:"en"
+}).done(function(data) {
+  $.each( data.items, function( i, item ) {
+  $( "<img>" ).attr( "src", item.media.m ).appendTo( "#portrait" );
+    if ( i === 0 ) {
+        return false;
+      }
+    });
+    });
+
+_________________________
+
+ $.get("www.space.jesse-benjamin.com/?url=www.elsewhere.org/pomo/", function (){
+      var pomo = document.getElementById('#post-1182');
+      var value = pomo.val();
+      var $pomo = $('#text');
+      $pomo.text(value);
+    });
+

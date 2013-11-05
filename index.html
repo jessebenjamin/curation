@@ -2,84 +2,83 @@
 <html lang="en">
  <head>
   	<meta charset="UTF-8">
-  	<title>S P A C E &#32;</title>
+  	<title>&times;</title>
   	<meta name="author" content="name">
   	<meta name="description" content="description here">
   	<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-  	<link rel="stylesheet" href="/stylesheet.css" type="text/css">
-  	<script type="text/javascript" src="//use.typekit.net/oea6usb.js"></script>
+  	<link rel="stylesheet" href="/stylesheet.css" type="text/css">  	
+    <script type="text/javascript" src="//use.typekit.net/oea6usb.js"></script>
 	  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/js/processing-1.4.1.min.js"></script>
  </head>
- <body>
-  <div id="person">
-  <div class="firstname"></div>&#32;<div class="lastname"></div>
+<body>
+
+
+<div id="background">
+<canvas data-processing-sources="/processing/abstract_if/abstract_if.pde"></canvas>
+</div>
+
+<div id="nav">
+    <div class="border"><img src="/images/border.png"/></div>
+    <a href="http://savage-curation.com">&larr;</a> SAVAGE CURATION <a href="http://savage-curation.com">&rarr;</a> </p>
+    <img src="/images/friend.png" width="35" height="35"/>
+    <img src="/images/printed.png" width="35" height="35"/>
+    <img src="/images/login.png" width="35" height="35"/>
+    <div class="border"><img src="/images/border.png"/></div>
+</div>
+
+<div class="left">&uarr;<br />S</div><div class="right">&uarr;<br />C</div>
+
+<div id="wrap">
+
+  <div id="span">
+    <div id="portrait"></div>
+    <div id="person">
+      <div class="firstname">Garland</div>&#32;<div class="lastname">Wint</div>
+    </div>
+    <div id="star"><div class="val1"></div><div class="val2"></div></div>
+    <div class="border"><img src="/images/border.png"/></div>
   </div>
 
-  <div id="portrait"></div>
+  <div id="span">
+    <div id="flickr"></div>
+    <div class="border"><img src="/images/border.png"/></div>
+  </div>
 
-  <div id="flickr"></div>
+  <div id="span">
+    <div id="text">»Society is intrinsically meaningless,« says Marx. The primary theme of Tilton’s[1] analysis of modern predialectic theory is the futility, and some would say the failure, of dialectic sexual identity. However, neomodern capitalist theory implies that the law is part of the paradigm of reality. </div>
+    <div class="border"><img src="/images/border.png"/></div>
+  </div>
 
-  <div id="text"></div>
+  <div id="span">
+    <div id="text">»Society is intrinsically meaningless,« says Marx. The primary theme of Tilton’s[1] analysis of modern predialectic theory is the futility, and some would say the failure, of dialectic sexual identity. However, neomodern capitalist theory implies that the law is part of the paradigm of reality. </div>
+    <div class="border"><img src="/images/border.png"/></div>
+  </div>
 
-  <script>
-    
-    $.get("www.space.jesse-benjamin.com/?url=www.elsewhere.org/pomo/", function (){
-      var pomo = document.getElementById('#post-1182');
-      var value = pomo.val();
-      var $pomo = $('#text');
-      $("#text").text(value);
-    });
+  <div id="span">
+    <div id="text">»Society is intrinsically meaningless,« says Marx. The primary theme of Tilton’s[1] analysis of modern predialectic theory is the futility, and some would say the failure, of dialectic sexual identity. However, neomodern capitalist theory implies that the law is part of the paradigm of reality. </div>
+    <div class="border"><img src="/images/border.png"/></div>
+  </div>
 
-  </script>
+  <div id="span">
+    <div id="text">»Society is intrinsically meaningless,« says Marx. The primary theme of Tilton’s[1] analysis of modern predialectic theory is the futility, and some would say the failure, of dialectic sexual identity. However, neomodern capitalist theory implies that the law is part of the paradigm of reality. </div>
+    <div class="border"><img src="/images/border.png"/></div>
+  </div>
 
-  <script>
+</div>
 
-  (function() {
-        var firstname;
-        var lastname;
-        var gender;
-        var title;
-       
-        var url = 'http://api.randomuser.me/0.2/'
-            keyA = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'brown', 'black', 'white', 'golden', 'silver', 'big', 'small', 'heavy', 'tiny', 'lazy', 'beautiful', 'organic', 'ticklish', 'crazy'],
-            keyB = ['Cat', 'Dog', 'Panda', 'Bear', 'Fish', 'Bird', 'Elephant', 'Tiger', 'Snake', 'Rabbit', 'Peacock', 'Koala', 'Lion', 'Frog', 'Gorilla', 'Meercat', 'Ladybug', 'Butterfly', 'Goose', 'Duck', 'Swan', 'Ostrich', 'Leopard', 'Wolf', 'Mouse'];
-        function randomSeed(a, b){
-            prefix = Math.floor(Math.random() * a.length);
-            suffix = Math.floor(Math.random() * b.length);
-            string = a[prefix]+''+b[suffix];
-            return string;
-        }
-        var getUser = function(s){
-            // Get dat info
-            var output = $.ajax({
-                // Check if a seed parameter is passed.
-                url: (s != undefined ? url+'?seed='+s : url),
-                dataType: 'json',
-                success: function(r){
-                    $('.gen_title').html(r.results[0].user.name.title);
-                    $('.firstname').html(r.results[0].user.name.first);
-                    $('.lastname').html(r.results[0].user.name.last);
-                    $('.gender').html(r.results[0].user.gender);
-                    $('title').html(r.results[0].user.name.last).toUpperCase;
-                
-                firstname = r.results[0].user.name.first;
-                lastname = r.results[0].user.name.last;
-                gender = r.results[0].user.gender;
-                title = r.results[0].user.name.title;
-       
-                }
-            });
-            // return output.success.r.results;
-        }
-        getUser(randomSeed(keyA, keyB));
- 
-    
-      
-      
-  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+<script>
+
+$(document).ready(function (){
+
+var wint = "wint";
+var garland = "portrait";
+
+var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+
   $.getJSON( flickerAPI, {
-    tags: lastname,
+    tags: wint,
     tagmode: "any",
     format: "json"
     })
@@ -92,21 +91,55 @@
     });
     });
 
-  var url = "http://en.wikipedia.org/w/api.php?action=parse&format=json&callback=?";
-  var page = "New_York"; // your page title, eg. New_York
+ $.getJSON( flickerAPI, {
+    tags: garland,
+    tagmode: "any",
+    format: "json"
+    })
+  .done(function( data ) {
+  $.each( data.items, function( i, item ) {
+  $( "<img>" ).attr( "src", item.media.m ).appendTo( "#portrait" );
+    if ( i === 0 ) {
+        return false;
+      }
+    });
+    });
 
-$.getJSON(url, { 
-  page: page, 
-  limit:1,
-  prop:"text|images", 
-  uselang:"en"
-}, function(data) {
-  var $container = $("#text");
-  $container.append(data['parse']['text']['*']);
-  });
-})();
+var exoAPI = "http://exoapi.com/api/skyhook/planets/all";
+var r;
 
-  </script>
 
- </body>
+  $.getJSON( exoAPI, { 
+    tagmode: "any",
+    format: "json"
+    })
+  .done(function(data) {
+    console.log(data);
+    r = Math.round(Math.random(0, 300));
+    $('.val1').text(data.response.results[r]._id);
+    $('.val2').text(data.response.results[r].mass);
+    $('title').text(data.response.results[r].habitable_class);
+    });
+
+
+var startY = 300;
+    $(window).scroll(function(){
+    checkY();
+    });
+    function checkY(){
+    if( $(window).scrollTop() > startY ){
+        $('.left').slideDown();
+        $('.right').slideDown();
+    }else{
+        $('.left').slideUp();
+        $('.right').slideUp();
+    }
+  } 
+checkY();
+
+});
+
+</script>
+
+</body>
 </html>
