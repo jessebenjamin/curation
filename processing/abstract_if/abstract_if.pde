@@ -20,9 +20,6 @@ void createimage(){
   strokeWeight(round(random(5,100)));
   stroke(random(0,255), random(0,255), random(0,255), round(random(80,100)));
   ellipse(random(-width,width*2), random(-width,height*2), random(-width,width*2), random(-width,height*2));
-  fill(255);
-  noStroke();
-  quad(50,50,1950,50,1950,3950,50,3950);
   smooth();
   }
   }  else if (r<10) {
@@ -32,9 +29,6 @@ void createimage(){
   strokeWeight(round(random(5,100)));
   stroke(random(0,255), random(0,255), random(0,255), round(random(80,100)));
   ellipse(random(-width,width*2), random(-width,height*2), random(-width,width*2), random(-width,height*2));
-  fill(255);
-  noStroke();
-  quad(50,50,1950,50,1950,3950,50,3950);
   smooth();
   }
 } else if (r<15) {
@@ -45,9 +39,6 @@ void createimage(){
   strokeWeight(round(random(5,100)));
   stroke(random(0,255), random(0,255), random(0,255), round(random(80,100)));
   ellipse(random(-width,width*2), random(-width,height*2), random(-width,width*2), random(-width,height*2));
-  fill(255);
-  noStroke();
-  quad(50,50,1950,50,1950,3950,50,3950);
   smooth();
   }
 } else if (r<20) {
@@ -58,9 +49,6 @@ void createimage(){
   strokeWeight(round(random(5,100)));
   stroke(random(0,255), random(0,255), random(0,255), round(random(80,100)));
   ellipse(random(-width,width*2), random(-width,height*2), random(-width,width*2), random(-width,height*2));
-  fill(255);
-  noStroke();
-  quad(50,50,1950,50,1950,3950,50,3950);
   smooth();
   }
 } else if (r<25) {
@@ -71,9 +59,6 @@ void createimage(){
   strokeWeight(round(random(5,100)));
   stroke(random(0,255), random(0,255), random(0,255), round(random(80,100)));
   ellipse(random(-width,width*2), random(-width,height*2), random(-width,width*2), random(-width,height*2));
-  fill(255);
-  noStroke();
-  quad(50,50,1950,50,1950,3950,50,3950);
   smooth();
   }
 } else {
@@ -83,10 +68,9 @@ void createimage(){
   strokeWeight(round(random(5,100)));
   stroke(random(0,255), random(0,255), random(0,255), round(random(80,100)));
   ellipse(random(-width,width*2), random(-width,height*2), random(-width,width*2), random(-width,height*2));
-  fill(255);
-  noStroke();
-  quad(50,50,1950,50,1950,3950,50,3950);
   smooth();
   }
 } 
+
+//save("abstract_if-##.png");
   }

@@ -11,13 +11,17 @@
 	  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/js/processing-1.4.1.min.js"></script>
+    <script src="/js/namey.js"></script>
+    <script src="/js/savcur.js"></script>
+
  </head>
 <body>
-
 
 <div id="background">
 <canvas data-processing-sources="/processing/abstract_if/abstract_if.pde"></canvas>
 </div>
+
+<div id="whitespace"></div>
 
 <div id="nav">
     <div class="border"><img src="/images/border.png"/></div>
@@ -35,7 +39,7 @@
   <div id="span">
     <div id="portrait"></div>
     <div id="person">
-      <div class="firstname">Garland</div>&#32;<div class="lastname">Wint</div>
+      <div class="firstname"></div>&#32;<div class="lastname">Wint</div>
     </div>
     <div id="star"><div class="val1"></div><div class="val2"></div></div>
     <div class="border"><img src="/images/border.png"/></div>
@@ -50,96 +54,10 @@
     <div id="text">»Society is intrinsically meaningless,« says Marx. The primary theme of Tilton’s[1] analysis of modern predialectic theory is the futility, and some would say the failure, of dialectic sexual identity. However, neomodern capitalist theory implies that the law is part of the paradigm of reality. </div>
     <div class="border"><img src="/images/border.png"/></div>
   </div>
-
-  <div id="span">
-    <div id="text">»Society is intrinsically meaningless,« says Marx. The primary theme of Tilton’s[1] analysis of modern predialectic theory is the futility, and some would say the failure, of dialectic sexual identity. However, neomodern capitalist theory implies that the law is part of the paradigm of reality. </div>
-    <div class="border"><img src="/images/border.png"/></div>
-  </div>
-
-  <div id="span">
-    <div id="text">»Society is intrinsically meaningless,« says Marx. The primary theme of Tilton’s[1] analysis of modern predialectic theory is the futility, and some would say the failure, of dialectic sexual identity. However, neomodern capitalist theory implies that the law is part of the paradigm of reality. </div>
-    <div class="border"><img src="/images/border.png"/></div>
-  </div>
-
-  <div id="span">
-    <div id="text">»Society is intrinsically meaningless,« says Marx. The primary theme of Tilton’s[1] analysis of modern predialectic theory is the futility, and some would say the failure, of dialectic sexual identity. However, neomodern capitalist theory implies that the law is part of the paradigm of reality. </div>
-    <div class="border"><img src="/images/border.png"/></div>
+  
   </div>
 
 </div>
-
-<script>
-
-$(document).ready(function (){
-
-var wint = "wint";
-var garland = "portrait";
-
-var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
-
-  $.getJSON( flickerAPI, {
-    tags: wint,
-    tagmode: "any",
-    format: "json"
-    })
-  .done(function( data ) {
-  $.each( data.items, function( i, item ) {
-  $( "<img>" ).attr( "src", item.media.m ).appendTo( "#flickr" );
-    if ( i === 3 ) {
-        return false;
-      }
-    });
-    });
-
- $.getJSON( flickerAPI, {
-    tags: garland,
-    tagmode: "any",
-    format: "json"
-    })
-  .done(function( data ) {
-  $.each( data.items, function( i, item ) {
-  $( "<img>" ).attr( "src", item.media.m ).appendTo( "#portrait" );
-    if ( i === 0 ) {
-        return false;
-      }
-    });
-    });
-
-var exoAPI = "http://exoapi.com/api/skyhook/planets/all";
-var r;
-
-
-  $.getJSON( exoAPI, { 
-    tagmode: "any",
-    format: "json"
-    })
-  .done(function(data) {
-    console.log(data);
-    r = Math.round(Math.random(0, 300));
-    $('.val1').text(data.response.results[r]._id);
-    $('.val2').text(data.response.results[r].mass);
-    $('title').text(data.response.results[r].habitable_class);
-    });
-
-
-var startY = 300;
-    $(window).scroll(function(){
-    checkY();
-    });
-    function checkY(){
-    if( $(window).scrollTop() > startY ){
-        $('.left').slideDown();
-        $('.right').slideDown();
-    }else{
-        $('.left').slideUp();
-        $('.right').slideUp();
-    }
-  } 
-checkY();
-
-});
-
-</script>
 
 </body>
 </html>
