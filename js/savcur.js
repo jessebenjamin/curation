@@ -14,6 +14,23 @@ $(document).ready(function (){
   	$('#whitespace').css('height', heightwhite);
   });
 
+  //Setup Login & Friends
+
+  $('.login').click(function(){
+  	var crow = prompt("i = U+00D6	Ö	0303 0226	&Ouml;	Ö 	&#214;	Ö 	LATIN CAPITAL LETTER O WITH DIAERESIS; i++ = ?");
+  	if (crow == "U+00D7	×	0303 0227	&times;	× 	&#215;	× 	MULTIPLICATION SIGN") {
+  		alert("Commodore! Drop a line at hi@jesse-benjamin.com for a neat print.");
+  	} else {
+  		alert("Try harder.");
+  		history.go(0);
+  	};
+  });
+
+/*  $('.friend').click(function(){
+  	$('#nogo').css("display", "block");
+  });*/
+
+
   //Get Names
 
   var firstname;
@@ -38,16 +55,13 @@ $(document).ready(function (){
     callback: function(data) {
       console.log(data);
       $('.lastname').text(data);
+      $('title').append(data);
 
       lastname = data[0];
     }
   });
 
   //Get Flickr
-
-
-var wint = "wint";
-var garland = "portrait";
 
 var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 
@@ -94,8 +108,11 @@ var r;
     console.log(data);
     r = Math.round(Math.random(0, 300));
     $('.val1').text(data.response.results[r]._id);
-    $('.val2').text(data.response.results[r].mass);
-    $('title').text(data.response.results[r].habitable_class);
+    $('.val2').text(data.response.results[r].disc_year);
+    $('.val3').text(data.response.results[r].mass);
+    $('.val4').text(data.response.results[r].star.constellation);
+    $('.val5').text(data.response.results[r].star.type);
+    $('.val6').text(data.response.results[r].star.name_hd);
     });
 
 

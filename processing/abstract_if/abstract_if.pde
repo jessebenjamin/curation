@@ -25,9 +25,9 @@ void createimage(){
   }  else if (r<10) {
   background(random(0,120), 0, 0);
   for(int x=0; x<random(100,500); x++) {
-  noFill();
-  strokeWeight(round(random(5,100)));
-  stroke(random(0,255), random(0,255), random(0,255), round(random(80,100)));
+  noStroke();
+  //strokeWeight(round(random(5,100)));
+  fill(random(0,255), random(0,255), random(0,255), round(random(80,100)));
   ellipse(random(-width,width*2), random(-width,height*2), random(-width,width*2), random(-width,height*2));
   smooth();
   }
@@ -44,10 +44,9 @@ void createimage(){
 } else if (r<20) {
   background(0, random(0,120), 0);
   for(int x=0; x<random(100,500); x++) {
-  noFill();
-  strokeCap(ROUND);
-  strokeWeight(round(random(5,100)));
-  stroke(random(0,255), random(0,255), random(0,255), round(random(80,100)));
+  noStroke();
+  //strokeWeight(round(random(5,100)));
+  fill(random(0,255), random(0,255), random(0,255), round(random(80,100)));
   ellipse(random(-width,width*2), random(-width,height*2), random(-width,width*2), random(-width,height*2));
   smooth();
   }
@@ -64,13 +63,13 @@ void createimage(){
 } else {
   background(0, 0, random(0,120));
   for(int x=0; x<random(100,500); x++) {
-  noFill();
-  strokeWeight(round(random(5,100)));
-  stroke(random(0,255), random(0,255), random(0,255), round(random(80,100)));
+  noStroke();
+  //strokeWeight(round(random(5,100)));
+  fill(random(0,255), random(0,255), random(0,255), round(random(80,100)));
   ellipse(random(-width,width*2), random(-width,height*2), random(-width,width*2), random(-width,height*2));
   smooth();
   }
 } 
 
-//save("abstract_if-5.png");
+//save("abstract_if-8.png");
   }
