@@ -1,13 +1,23 @@
 $(document).ready(function (){
 
+	//Setup Content Height
+
   var height = $( document ).height();
   var width = $( document ).width();
 
   $('#background').children('canvas').css("height", height);
   $('#background').children('canvas').css("width", width);
 
-  $('#whitespace').css('height', height);
-  $('#whitespace').css('height', width);
+  $(window).load(function() {
+  	var heightwhite =  $('#background').children('canvas').height();
+
+  	$('#whitespace').css('height', heightwhite);
+  });
+
+  //Get Names
+
+  var firstname;
+  var lastname;
 
   namey.get({
   	count: 1,
@@ -16,6 +26,8 @@ $(document).ready(function (){
     callback: function(data) {
       console.log(data);
       $('.firstname').text(data);
+
+      firstname = data[0];
     }
   });
 
@@ -26,24 +38,12 @@ $(document).ready(function (){
     callback: function(data) {
       console.log(data);
       $('.lastname').text(data);
+
+      lastname = data[0];
     }
   });
 
-/*var firstnameJSON = "http://namey.muffinlabs.com/name.json?with_surname=false&frequency=rare";
-var lastnameJSON = "http://namey.muffinlabs.com/name.json";
-
-$.getJSON(firstnameJSON, function(data){ 
-  console.log(data);
-});
-
-$.getJSON(lastnameJSON, {
-  count: "1",
-  type: "surname",
-  frequency: "rare",
-  format: "json"
-}).done(function(data){ 
-  console.log(data.);
-});*/
+  //Get Flickr
 
 
 var wint = "wint";
@@ -52,7 +52,7 @@ var garland = "portrait";
 var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 
   $.getJSON( flickerAPI, {
-    tags: wint,
+    tags: lastname,
     tagmode: "any",
     format: "json"
     })
@@ -66,7 +66,7 @@ var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncal
     });
 
  $.getJSON( flickerAPI, {
-    tags: garland,
+    tags: firstname,
     tagmode: "any",
     format: "json"
     })
@@ -78,6 +78,9 @@ var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncal
       }
     });
     });
+
+
+  	//Get NASA
 
 var exoAPI = "http://exoapi.com/api/skyhook/planets/all";
 var r;
