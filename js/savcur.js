@@ -1,6 +1,6 @@
 $(document).ready(function (){
 
-	//Setup Content Height
+	//Setup Content Height ----------------------------------------------------------------------------------------------------
 
   var height = $( document ).height();
   var width = $( document ).width();
@@ -10,58 +10,64 @@ $(document).ready(function (){
 
   $(window).load(function() {
   	var heightwhite =  $('#background').children('canvas').height();
+    var heightnum = heightwhite * .0175;
+    var heighttotal = heightwhite - heightnum;
 
-  	$('#whitespace').css('height', heightwhite);
+  	$('#whitespace').css('height', heighttotal);
   });
 
-  //Setup Login & Friends
-
-  $('.login').click(function(){
-  	var crow = prompt("i = U+00D6	Ö	0303 0226	&Ouml;	Ö 	&#214;	Ö 	LATIN CAPITAL LETTER O WITH DIAERESIS; i++ = ?");
-  	if (crow == "U+00D7	×	0303 0227	&times;	× 	&#215;	× 	MULTIPLICATION SIGN") {
-  		alert("Commodore! Drop a line at hi@jesse-benjamin.com for a neat print.");
-  	} else {
-  		alert("Try harder.");
-  		history.go(0);
-  	};
-  });
-
-/*  $('.friend').click(function(){
-  	$('#nogo').css("display", "block");
-  });*/
-
-
-  //Get Names
+  //Setup Login & Friends ---------------------------------------------------------------------------------------------------
 
   var firstname;
   var lastname;
 
-  namey.get({
-  	count: 1,
-    with_surname: false,
-    frequency: "rare",
-    callback: function(data) {
-      console.log(data);
-      $('.firstname').text(data);
+  $('.login').click(function(){
+  	var crow = prompt("x = U+00D6	Ö	0303 0226	&Ouml;	Ö 	&#214;	Ö 	LATIN CAPITAL LETTER O WITH DIAERESIS", "x+1 = ?");
+  	if (crow == "U+00D7	×	0303 0227	&times;	× 	&#215;	× 	MULTIPLICATION SIGN") {
+      var ran = Math.round(Math.random(0, 9));
+      var dom = new Array("HWk2TH", "Hkqk34", "UgZsT7", "JrD9cp", "hjdKDb", "ycnc2k", "GGC8s2", "JZQRpx", "gXCgnF", "jwr3ha");
+      var random = dom[ran];
+      alert("Commodore! Drop a line at hi@jesse-benjamin.com for a neat print. Code:" + " " + random);
+      history.go(0);
+  	} else {
+  		alert("Login failed.");
+  		history.go(0);
+  	};
+  });
 
-      firstname = data[0];
+  $('.friend').click(function(){
+    var join = prompt("You cannot add users without an account. Please provide your full name:");
+    if (join == "") {
+      alert("Please provide your full name.");
+    } else {
+      alert(".get=?Critical error: no match found in account database!_?=null");
+      history.go(0);
+      $('#nav').css("font-size", "400%");
+      $('#nav').html("&dagger;");      
+    };
+  });
+
+  //Get Names ---------------------------------------------------------------------------------------------------------------
+
+
+  namey.get({count: 1,  with_surname: false,  frequency: "all",  callback: function(data) {
+      console.log(data);
+      $('.firstname').html(data);
+
+      firstname = data;
     }
   });
 
-  namey.get({
-  	count: 1,
-    type: "surname",
-    frequency: "rare",
-    callback: function(data) {
+  namey.get({count: 1,  type: "surname",  frequency: "all",  callback: function(data) {
       console.log(data);
-      $('.lastname').text(data);
+      $('.lastname').html(data);
       $('title').append(data);
 
-      lastname = data[0];
+      lastname = data;
     }
   });
 
-  //Get Flickr
+  //Get Flickr ---------------------------------------------------------------------------------------------------------------
 
 var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 
@@ -94,7 +100,7 @@ var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncal
     });
 
 
-  	//Get NASA
+  	//Get NASA ----------------------------------------------------------------------------------------------------------------
 
 var exoAPI = "http://exoapi.com/api/skyhook/planets/all";
 var r;
