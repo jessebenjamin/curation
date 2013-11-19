@@ -18,19 +18,16 @@ $(document).ready(function (){
 
   //Setup Login & Friends ---------------------------------------------------------------------------------------------------
 
-  var firstname;
-  var lastname;
-
   $('.login').click(function(){
-  	var crow = prompt("x = U+00D6	Ö	0303 0226	&Ouml;	Ö 	&#214;	Ö 	LATIN CAPITAL LETTER O WITH DIAERESIS", "x+1 = ?");
-  	if (crow == "U+00D7	×	0303 0227	&times;	× 	&#215;	× 	MULTIPLICATION SIGN") {
-      var ran = Math.round(Math.random(0, 9));
+  	var crow = prompt("x = &Ouml;", "x+1 = ?");
+  	if (crow == "&times;") {
+      var ran = Math.round(Math.random()*9);
       var dom = new Array("HWk2TH", "Hkqk34", "UgZsT7", "JrD9cp", "hjdKDb", "ycnc2k", "GGC8s2", "JZQRpx", "gXCgnF", "jwr3ha");
       var random = dom[ran];
       alert("Commodore! Drop a line at hi@jesse-benjamin.com for a neat print. Code:" + " " + random);
       history.go(0);
   	} else {
-  		alert("Login failed.");
+  		alert("Confirmation failed.");
   		history.go(0);
   	};
   });
@@ -50,26 +47,34 @@ $(document).ready(function (){
   //Get Names ---------------------------------------------------------------------------------------------------------------
 
 
+  var firstname;
+  var lastname;
+
+
   namey.get({count: 1,  with_surname: false,  frequency: "all",  callback: function(data) {
       console.log(data);
-      $('.firstname').html(data);
+      $('.firstname').html(data[0]);
+      $('title').append(data[0]+" ");
 
-      firstname = data;
+      firstname = data[0];
     }
   });
 
   namey.get({count: 1,  type: "surname",  frequency: "all",  callback: function(data) {
       console.log(data);
-      $('.lastname').html(data);
-      $('title').append(data);
+      $('.lastname').html(data[0]);
+      $('title').append(data[0]);
 
-      lastname = data;
+      lastname = data[0];
     }
   });
 
   //Get Flickr ---------------------------------------------------------------------------------------------------------------
 
-var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+
+  setTimeout(function (){
+
+  var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 
   $.getJSON( flickerAPI, {
     tags: lastname,
@@ -99,6 +104,8 @@ var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncal
     });
     });
 
+  }, 200);
+
 
   	//Get NASA ----------------------------------------------------------------------------------------------------------------
 
@@ -112,7 +119,7 @@ var r;
     })
   .done(function(data) {
     console.log(data);
-    r = Math.round(Math.random(0, 300));
+    r = Math.round(Math.random()*300);
     $('.val1').text(data.response.results[r]._id);
     $('.val2').text(data.response.results[r].disc_year);
     $('.val3').text(data.response.results[r].mass);
