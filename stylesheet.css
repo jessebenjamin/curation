@@ -224,8 +224,7 @@ title {
 }
 
 .emoticon {
-	font-family: "inconsolata","Courier",sans-serif;
-	font-size: 100%;
+	font-size: 120%;
 	font-weight:500;
 	padding-top: 1%;
 	display:inline;
@@ -233,8 +232,7 @@ title {
 }
 
 .bemoticon {
-	font-family: "inconsolata","Courier",sans-serif;
-	font-size: 100%;
+	font-size: 120%;
 	font-weight:500;
 	padding-top: 1%;
 	display:inline;
@@ -242,8 +240,7 @@ title {
 }
 
 .cemoticon {
-	font-family: "inconsolata","Courier",sans-serif;
-	font-size: 100%;
+	font-size: 120%;
 	font-weight:500;
 	padding-top: 1%;
 	display:inline;
@@ -316,7 +313,8 @@ title {
 	font-size: 80%;
 	font-weight:500;
 	width:50%;
-	margin-right: 40px;
+	padding-right: 5%;
+	padding-left: 5%;
 	margin-bottom: 5%;
 	position: relative;
 	text-align: left;
@@ -353,8 +351,9 @@ title {
 	float:right;
 	position: relative;
 	width:50%;
-	padding-right: 20px;
-	padding-left: 20px;
+	padding-right: 5%;
+	padding-left: 5%;
+	margin-bottom: 5%;
 	font-size: 80%;
 	color:#000;
 	letter-spacing:0.1em;

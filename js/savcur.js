@@ -99,18 +99,18 @@ $(document).ready(function (){
 
   //Get NYT ------------------------------------------------------------------------------------------------------------------
 
-  var nyt = "http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=kari&api-key=372a6a22f4fe050bba6eb0aad278c28a:3:68487947";
+/*  var nyt = "http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=kari&api-key=372a6a22f4fe050bba6eb0aad278c28a:3:68487947";
 
   $.getJSON(nyt, {
     format: "json"
   }).done(function(data){
     console.log(data.response.docs[5].snippet);
     $('#text').append(data.response.docs[5].snippet);
-  });
+  });*/
 
   //Get Obama   --------------------------------------------------------------------------------------------------------------
 
-  var bho = "https://api.whitehouse.gov/v1/petitions.json?limit=1&offset=0";
+  var bho = "https://api.whitehouse.gov/v1/petitions.json?limit=4&offset=0";
 
   $.getJSON(bho, {
     format: "json"
