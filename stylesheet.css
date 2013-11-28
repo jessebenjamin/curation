@@ -218,8 +218,36 @@ title {
 	margin-top: 5%;
 	margin-left: 0%;
 	margin-right: auto;
+	margin-bottom: 5%;
 	height:auto;
 	max-width:200px;
+}
+
+.emoticon {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 100%;
+	font-weight:500;
+	padding-top: 1%;
+	display:inline;
+	color: #4682B4;
+}
+
+.bemoticon {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 100%;
+	font-weight:500;
+	padding-top: 1%;
+	display:inline;
+	color: #40E0D0;
+}
+
+.cemoticon {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 100%;
+	font-weight:500;
+	padding-top: 1%;
+	display:inline;
+	color: #CD5C5C;
 }
 
 /* Content: NASA */
@@ -242,61 +270,68 @@ title {
 	font-size: 100%;
 	font-weight:500;
 	padding-top: 1%;
-	display:block;
+	display:inline-block;
 }
 
 .val1 {
 	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:block;
+	display:inline-block;
 }
 
 .val2 {
 	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:block;
+	display:inline-block;
 }
 
 .val3 {
 	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:block;
+	display:inline-block;
 }
 
 .val4 {
 	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:block;
+	display:inline-block;
 }
 
 .val5 {
 	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:block;
+	display:inline-block;
 }
 
 /* Content: Flickr */
 
 #flickr { 
 	float:right;
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 80%;
+	font-weight:500;
 	width:50%;
-	margin-right: 0%;
+	margin-right: 40px;
 	margin-bottom: 5%;
 	position: relative;
+	text-align: left;
+	text-indent: 20px;
 	display:block;
 	height:auto;
 	z-index: 2;
+	border-left: 2px dotted #000;
 }
 
 #flickr img {
 }
 
 .flickr_img {
+	padding-top:1%;
 	display:block;
 	float:left;
 	width:44%;
@@ -318,13 +353,14 @@ title {
 	float:right;
 	position: relative;
 	width:50%;
-	margin-left: auto;
-	margin-right: 3%;
-	font-size: 90%;
+	padding-right: 20px;
+	padding-left: 20px;
+	font-size: 80%;
 	color:#000;
 	letter-spacing:0.1em;
 	text-align:left;
 	vertical-align: middle;
+	border-left: 2px dotted #000;
 }
 
 #text img {
@@ -334,5 +370,6 @@ title {
 	margin-bottom: 5%;
 	min-width:60px;
 	display:block;
+	padding-top:1%;
 }
 

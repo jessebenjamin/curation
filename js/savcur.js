@@ -76,7 +76,21 @@ $(document).ready(function (){
 
   namey.get({count: 1,  type: "surname",  frequency: "all",  callback: function(data) {
       console.log(data);
-      $('.lastname').html(data[0]);
+      var emo = Math.floor(Math.random() * 54);
+      var lemo = Math.floor(Math.random() * 54);
+      var bemo = Math.floor(Math.random() * 54);
+      var cemo = Math.floor(Math.random() * 54);
+      var ticons = new Array("⇞", "❤", "✈", "★", "☀", "▣", "℞", "♩", "♪", "♫", "☨", "✞", "✵", "✪", "✯", "☻", "☺", "✆", "☹", "☁", "☃", "❁", "☘", "☥", "☮", "☯", "☯", "☤", "⚓", "⚠", "⚡", "♿", "☢", "☠", "✌", "✎", "✒", "☿", "♆", "&#9800;", "&#9801;", "&#9802;", "&#9803;", "&#9804;", "&#9805;", "&#9806;", "&#9807;", "&#9809;", "&#9810;", "&#9811;", "&#9818;", "&#9819;", "&#9820;", "&#9821;", "&#9822;", "&#9823;")
+      var emoticon = ticons[emo];
+      var lemoticon = ticons[lemo];
+      var bemoticon = ticons[bemo];
+      var cemoticon = ticons[cemo];
+
+      $('.emoticon').html(lemoticon);
+      $('.bemoticon').html(bemoticon);
+      $('.cemoticon').html(cemoticon);
+
+      $('.lastname').html(data[0] + " " + emoticon);
       $('title').append(data[0]);
 
       lastname = data[0];
@@ -168,11 +182,13 @@ var r;
   .done(function(data) {
     console.log(data);
     r = Math.round(Math.random()*300);
-    $('.val1').append("&middot;" + " " + data.response.results[r]._id);
-    $('.val2').append("&middot;" + " " + data.response.results[r].disc_year);
-    $('.val3').append("&middot;" + " " + data.response.results[r].mass);
-    $('.val4').append("&middot;" + " " + data.response.results[r].star.constellation);
-    $('.val5').append("&middot;" + " " + data.response.results[r].star.type);
+    $('.val1').append(data.response.results[r]._id);
+    $('.val2').append(data.response.results[r].disc_year);
+    $('.val3').append(data.response.results[r].mass);
+    $('.val4').append(data.response.results[r].star.constellation);
+    $('.val5').append(data.response.results[r].star.type);
+
+    // "&middot;" + " " + 
     });
 
 
