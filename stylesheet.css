@@ -30,43 +30,82 @@ title {
 
 #whitespace {
 	position: absolute;
-	width:94%;
+	width:90%;
 	height:auto;
 	background-color: #fff;
 	top:5%;
 	bottom:5%;
-	left: 3%;
-	right: 3%;
+	left: 5%;
+	right: 5%;
 	z-index: 1;
+}
+
+/* Content: Structure */
+
+#wrap {
+	width:100%;
+	height:auto;
+	position: relative;
+	z-index: 2;
 }
 
 /* Navigation */
 
 #nav {
-	width:60%;
-	height: auto;
-	margin-right: 20%;
-	margin-left: 20%;
-	margin-top:5%;
-	margin-bottom:5%;
-	font-family: "europa";
-	font-size: 100%;
-	font-weight:300;
-	text-align: center;
-	letter-spacing: 0.5em;
-	position: absolute;
-	display: block;
+	width: 100%;
 	z-index: 2;
+	height:60px;
+	position:relative;
+	float:left;
+	margin:30px 0px 20px 0;
+	display: block;
 }
 
-#nav a {
+.logo {
+	width:auto;
+	float:left;
+	height: auto;
+	margin-left: 3%; 
+	position: relative;
+	display: block;
+	padding-bottom:1%;
+	border-bottom: 1px dashed #000;
+}
+
+.logo a {
 	text-decoration: none;
 	color:#000;
 }
 
-#nav img {
-	min-height: 10px;
-	min-width: 10px;
+.logo img {
+	min-height: 30px;
+	min-width: 30px;
+	text-decoration: none;
+	display:inline;
+	cursor: pointer;
+}
+
+.navicons {
+	width:auto;
+	float:right;
+	height: auto;
+	margin-right: 3%; 
+	text-align: center;
+	position: relative;
+	display: block;
+	z-index: 2;
+	padding-bottom:1%;
+	border-bottom: 1px dashed #000;
+}
+
+.navicons a {
+	text-decoration: none;
+	color:#000;
+}
+
+.navicons img {
+	min-height: 30px;
+	min-width: 30px;
 	text-decoration: none;
 	display:inline;
 	cursor: pointer;
@@ -90,12 +129,9 @@ title {
 }
 
 .left {
-	width:auto;
+	width:3%;
+	min-width:20px;
 	display:none;
-	font-family: "inconsolata",sans-serif;
-	font-size: 100%;
-	font-weight:500;
-	color:#fff;
 	position:fixed;
 	margin-top: 25%;
 	left:1%;
@@ -103,13 +139,16 @@ title {
 	z-index:2;
 }
 
+.left img {
+	width:100%;
+	display:block;
+	cursor: pointer;
+}
+
 .right {
-	width:auto;
+	width:3%;
+	min-width:20px;
 	display:none;
-	font-family: "inconsolata",sans-serif;
-	font-size: 100%;
-	font-weight:500;
-	color:#fff;
 	position:fixed;
 	margin-top: 25%;
 	right:1%;
@@ -117,160 +156,183 @@ title {
 	z-index:2;
 }
 
-/* Content: Structure */
-
-#wrap {
+.right img {
 	width:100%;
-	height:100%;
-	margin-top:15%;
-	position: absolute;
+	display:block;
+	cursor: pointer;
 }
 
-#span {
-	width:80%;
+/* Content: Person */
+
+#user {
+	float:left;
+	width:25%;
 	height:auto;
-	min-height: 25%;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 5%;
+	margin-left: 3%;
 	margin-bottom: 5%;
 	position: relative;
 	display:block;
 	z-index: 2;
 }
 
-/* Content: Person */
-
-#portrait {
-	position: relative;
-	width:25%;
-	height:auto;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:5%;
-	margin-bottom:5%;
-}
-
-#portrait img {
-	width:100%;
-}
-
-#person {
-	position:relative;
+.person {
 	width:100%;
 	margin-top: 3%;
 	margin-bottom: 3%;
 	display:block;
+	float:left;
+	clear:both;
 }
 
 .firstname {
-	font-family: "europa";
+	font-family: "europa","Futura",sans-serif;
 	font-size: 120%;
 	font-weight:500;
 	letter-spacing:0.1em;
-	width:49.8%;
-	text-align:right;
+	text-align:left;
 	float: left;
 	display:inline;
 	text-transform:capitalize;
 }
 
 .lastname {
-	font-family: "europa";
+	font-family: "europa","Futura",sans-serif;
 	font-size: 120%;
 	font-weight:500;
 	letter-spacing:0.1em;
-	width:49.8%;
-	float:right;
+	padding-left: 2%;
+	float:left;
 	text-align:left;
 	display:inline;
 	text-transform:capitalize;
 }
 
+.portrait {
+	display:block;
+	position:relative;
+	float:left;
+	width:100%;
+}
+
+.portrait img {
+	margin-top: 5%;
+	margin-left: 0%;
+	margin-right: auto;
+	height:auto;
+	max-width:200px;
+}
+
 /* Content: NASA */
 
-.star {
-	position: static;
-	width:33%;
-	height:100%;
+#star {
+	position: relative;
 	float:left;
+	width: 25%;
 	text-align: left;
-	vertical-align: middle;
+	margin-left: 3%;
+	margin-right: auto;
+	margin-top: 10%;
+	margin-bottom: 5%;
+	display:block;
+	z-index: 2;
+}
+
+.longlat {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 100%;
+	font-weight:500;
+	padding-top: 1%;
+	display:block;
 }
 
 .val1 {
-	font-family: "inconsolata",sans-serif;
+	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:list-item;
+	display:block;
 }
 
 .val2 {
-	font-family: "inconsolata",sans-serif;
+	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:list-item;
+	display:block;
 }
 
 .val3 {
-	font-family: "inconsolata",sans-serif;
+	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:list-item;
+	display:block;
 }
 
 .val4 {
-	font-family: "inconsolata",sans-serif;
+	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:list-item;
+	display:block;
 }
 
 .val5 {
-	font-family: "inconsolata",sans-serif;
+	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:500;
-	display:list-item;
-}
-
-.val6 {
-	font-family: "inconsolata",sans-serif;
-	font-size: 80%;
-	font-weight:500;
-	display:list-item;
+	display:block;
 }
 
 /* Content: Flickr */
 
 #flickr { 
+	float:right;
+	width:50%;
+	margin-right: 0%;
+	margin-bottom: 5%;
 	position: relative;
-	width: auto;
-	margin-left: 10%;
-	margin-right: 10%;
+	display:block;
+	height:auto;
+	z-index: 2;
 }
 
 #flickr img {
-	width: 20%;
+}
+
+.flickr_img {
+	display:block;
+	float:left;
+	width:44%;
+	height:200px;
+	overflow: hidden;
+	margin:3% 0% 3% 3%;
+}
+
+.flickr_img img {
 	vertical-align: middle;
-	padding-left:1.25%;
-	padding-right:1.25%;
-	padding-top:1.25%;
-	padding-bottom:1.25%;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 /* Content: Text */
 
 #text {
-	font-family: "inconsolata",sans-serif;
+	font-family: "inconsolata", "Courier", sans-serif;
+	float:right;
 	position: relative;
-	margin-left: 10%;
-	margin-right: 10%;
+	width:50%;
+	margin-left: auto;
+	margin-right: 3%;
 	font-size: 90%;
 	color:#000;
-	padding-left:10%;
-	padding-right:10%;
-	padding-top:10%;
 	letter-spacing:0.1em;
 	text-align:left;
 	vertical-align: middle;
 }
+
+#text img {
+	width: 30%;
+	margin-left: 5%;
+	margin-right: auto;
+	margin-bottom: 5%;
+	min-width:60px;
+	display:block;
+}
+

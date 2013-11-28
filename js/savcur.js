@@ -2,8 +2,8 @@ $(document).ready(function (){
 
 	//Setup Content Height ----------------------------------------------------------------------------------------------------
 
-  var height = $( document ).height();
-  var width = $( document ).width();
+  var height = $( window ).height();
+  var width = $( window ).width();
 
   $('#background').children('canvas').css("height", height);
   $('#background').children('canvas').css("width", width);
@@ -39,8 +39,9 @@ $(document).ready(function (){
     } else {
       alert(".get=?Critical error: no match found in account database!_?=null");
       history.go(0);
-      $('#nav').css("font-size", "400%");
-      $('#nav').html("&dagger;");      
+      $('.lastname').css("font-size", "400%");
+      $('.firstname').html(" ");
+      $('.lastname').html("&dagger;");       
     };
   });
 
@@ -49,6 +50,7 @@ $(document).ready(function (){
 
   var firstname;
   var lastname;
+  var wikiname;
 
 
   namey.get({count: 1,  with_surname: false,  frequency: "all",  callback: function(data) {
@@ -57,6 +59,18 @@ $(document).ready(function (){
       $('title').append(data[0]+" ");
 
       firstname = data[0];
+
+/*      wikiname = firstname.toString();
+      var wikisearch = "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + wikiname + "&format=json&callback=spellcheck";
+
+      $.getJSON(wikisearch, {
+        count:1,
+        format: "json"
+      }).done(function(data){
+          console.log(data[0]);
+      });
+
+      console.log(wikisearch);*/
     }
   });
 
@@ -67,6 +81,27 @@ $(document).ready(function (){
 
       lastname = data[0];
     }
+  });
+
+  //Get NYT ------------------------------------------------------------------------------------------------------------------
+
+  var nyt = "http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=kari&api-key=372a6a22f4fe050bba6eb0aad278c28a:3:68487947";
+
+  $.getJSON(nyt, {
+    format: "json"
+  }).done(function(data){
+    console.log(data.response.docs[5].snippet);
+    $('#text').append(data.response.docs[5].snippet);
+  });
+
+  //Get Obama   --------------------------------------------------------------------------------------------------------------
+
+  var bho = "https://api.whitehouse.gov/v1/petitions.json?limit=1&offset=0";
+
+  $.getJSON(bho, {
+    format: "json"
+    }).done( function(data) {
+    console.log(data.results[0].title);
   });
 
   //Get Flickr ---------------------------------------------------------------------------------------------------------------
@@ -84,10 +119,11 @@ $(document).ready(function (){
   .done(function( data ) {
   $.each( data.items, function( i, item ) {
   $( "<img>" ).attr( "src", item.media.m ).appendTo( "#flickr" );
-    if ( i === 3 ) {
+    if ( i === 5 ) {
         return false;
       }
     });
+    $("#flickr img").wrap("<div class='flickr_img'></div>");
     });
 
  $.getJSON( flickerAPI, {
@@ -97,17 +133,29 @@ $(document).ready(function (){
     })
   .done(function( data ) {
   $.each( data.items, function( i, item ) {
-  $( "<img>" ).attr( "src", item.media.m ).appendTo( "#portrait" );
+  $( "<img>" ).attr( "src", item.media.m ).appendTo( ".portrait" );
     if ( i === 0 ) {
         return false;
       }
     });
     });
 
-  }, 200);
+  }, 750);
 
 
   	//Get NASA ----------------------------------------------------------------------------------------------------------------
+
+var lon = (Math.random() * (-180 - 180) + 180).toFixed(3) * 1;
+var lat = (Math.random() * (-180 - 180) + 180).toFixed(3) * 1;
+var ron = Math.round(Math.random()*1);
+var rin = Math.round(Math.random()*1);
+var dom = new Array("N", "S");
+var dim = new Array("E", "W");
+var dor = dom[ron];
+var dir = dim[rin];
+
+$('.longlat').append(lon+" "+dor+" "+"&times;"+" ");
+$('.longlat').append(lat+" "+dir);
 
 var exoAPI = "http://exoapi.com/api/skyhook/planets/all";
 var r;
@@ -120,12 +168,11 @@ var r;
   .done(function(data) {
     console.log(data);
     r = Math.round(Math.random()*300);
-    $('.val1').text(data.response.results[r]._id);
-    $('.val2').text(data.response.results[r].disc_year);
-    $('.val3').text(data.response.results[r].mass);
-    $('.val4').text(data.response.results[r].star.constellation);
-    $('.val5').text(data.response.results[r].star.type);
-    $('.val6').text(data.response.results[r].star.name_hd);
+    $('.val1').append("&middot;" + " " + data.response.results[r]._id);
+    $('.val2').append("&middot;" + " " + data.response.results[r].disc_year);
+    $('.val3').append("&middot;" + " " + data.response.results[r].mass);
+    $('.val4').append("&middot;" + " " + data.response.results[r].star.constellation);
+    $('.val5').append("&middot;" + " " + data.response.results[r].star.type);
     });
 
 
@@ -137,6 +184,14 @@ var startY = 300;
     if( $(window).scrollTop() > startY ){
         $('.left').slideDown();
         $('.right').slideDown();
+
+    $('.left').click(function() {
+        window.scrollTo(0, 0);
+    });
+    
+    $('.right').click(function() {
+        window.scrollTo(0, 0);
+    });
     }else{
         $('.left').slideUp();
         $('.right').slideUp();
