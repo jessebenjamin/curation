@@ -1,0 +1,590 @@
+html, body {
+	height:auto;
+	width:100%;
+	font-size:100%;
+	overflow-x:hidden;
+}
+
+title {
+	text-transform: uppercase;
+}
+
+/* Background&Processing */
+
+#background {
+	width: auto;
+	height: auto;
+	top:0%;
+	bottom:0%;
+	left: 0%;
+	right: 0%;
+	z-index:-1;
+	position: absolute;
+}
+
+#background canvas {
+	width: auto;
+	height:auto;
+	position: absolute;
+}
+
+#whitespace {
+	font-family: "europa","Futura",sans-serif;
+	position: absolute;
+	width:90%;
+	height:auto;
+	background-color: #fff;
+	top:5%;
+	bottom:5%;
+	left: 5%;
+	right: 5%;
+	z-index: 1;
+}
+
+/* Content: Structure */
+
+#wrap {
+	width:100%;
+	height:auto;
+	position: relative;
+	z-index: 2;
+}
+
+/* Navigation */
+
+#nav {
+	width: 100%;
+	z-index: 2;
+	height:60px;
+	position:relative;
+	float:left;
+	margin:30px 0px 20px 0;
+	display: block;
+}
+
+.logo {
+	width:auto;
+	float:left;
+	height: auto;
+	margin-left: 3%; 
+	position: relative;
+	display: block;
+	padding-bottom:1%;
+	border-bottom: 1px dashed #000;
+}
+
+.logo a {
+	text-decoration: none;
+	color:#000;
+}
+
+.logo img {
+	min-height: 30px;
+	min-width: 30px;
+	text-decoration: none;
+	display:inline;
+	cursor: pointer;
+}
+
+.navicons {
+	width:auto;
+	float:right;
+	height: auto;
+	margin-right: 3%; 
+	text-align: center;
+	position: relative;
+	display: block;
+	z-index: 2;
+	padding-bottom:1%;
+	border-bottom: 1px dashed #000;
+}
+
+.navicons a {
+	text-decoration: none;
+	color:#000;
+}
+
+.navicons img {
+	min-height: 30px;
+	min-width: 30px;
+	text-decoration: none;
+	display:inline;
+	cursor: pointer;
+}
+
+
+.border {
+	width:50%;
+	height: auto;
+	margin-left: 25%;
+	margin-right: 25%;
+	position: relative;
+	display: block;
+	z-index: -1;
+}
+
+.border img {
+	width:100%;
+	height:auto;
+	padding:5% 0% 5% 0%;
+}
+
+.left {
+	width:3%;
+	min-width:20px;
+	display:none;
+	position:fixed;
+	margin-top: 25%;
+	left:1%;
+	float:left;
+	z-index:2;
+}
+
+.left img {
+	width:100%;
+	display:block;
+	cursor: pointer;
+}
+
+.right {
+	width:3%;
+	min-width:20px;
+	display:none;
+	position:fixed;
+	margin-top: 25%;
+	right:1%;
+	float:right;
+	z-index:2;
+}
+
+.right img {
+	width:100%;
+	display:block;
+	cursor: pointer;
+}
+
+/* Content: Person */
+
+#user {
+	float:left;
+	width:25%;
+	height:auto;
+	margin-left: 3%;
+	margin-bottom: 5%;
+	position: relative;
+	display:block;
+	z-index: 2;
+}
+
+.person {
+	font-family: "europa","Futura",sans-serif;
+	font-size: 120%;
+	font-weight:normal;
+	letter-spacing:0.1em;
+	text-align:left;
+	width: 100%;
+	float: left;
+	display:block;
+	text-transform:capitalize;
+}
+
+/*.firstname {
+	font-family: "europa","Futura",sans-serif;
+	font-size: 120%;
+	font-weight:normal;
+	letter-spacing:0.1em;
+	text-align:left;
+	float: left;
+	display:block;
+	text-transform:capitalize;
+}
+
+.lastname {
+	font-family: "europa","Futura",sans-serif;
+	font-size: 120%;
+	font-weight:normal;
+	letter-spacing:0.1em;
+	padding-left: 2%;
+	float:left;
+	text-align:left;
+	display:block;
+	text-transform:capitalize;
+}*/
+
+.portrait {
+	display:block;
+	position:relative;
+	float:left;
+	width:100%;
+}
+
+.portrait img {
+	margin-top: 5%;
+	margin-left: 0%;
+	margin-right: auto;
+	margin-bottom: 5%;
+	height:auto;
+	max-width:200px;
+}
+
+.emoticon {
+	font-size: 120%;
+	font-weight:500;
+	padding-left: 10px;
+	display:inline;
+	color: #4682B4;
+}
+
+.bemoticon {
+	font-size: 120%;
+	font-weight:500;
+	padding-left: 10px;
+	display:inline;
+	color: #40E0D0;
+}
+
+.cemoticon {
+	font-size: 120%;
+	font-weight:500;
+	padding-left: 10px;
+	display:inline;
+	color: #CD5C5C;
+}
+
+/* Content: NASA */
+
+#star {
+	position: relative;
+	float:left;
+	width: 25%;
+	text-align: left;
+	margin-left: 3%;
+	margin-right: auto;
+	margin-top: 10%;
+	margin-bottom: 5%;
+	display:block;
+	z-index: 2;
+}
+
+.longlat {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 100%;
+	font-weight:normal;
+	padding-top: 1%;
+	display:inline-block;
+}
+
+.val1 {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 80%;
+	font-weight:normal;
+	display:inline-block;
+}
+
+.val2 {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 80%;
+	font-weight:normal;
+	display:inline-block;
+}
+
+.val3 {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 80%;
+	font-weight:normal;
+	display:inline-block;
+}
+
+.val4 {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 80%;
+	font-weight:normal;
+	display:inline-block;
+}
+
+.val5 {
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 80%;
+	font-weight:normal;
+	display:inline-block;
+}
+
+/* Content: Flickr */
+
+#flickr { 
+	float:right;
+	font-family: "inconsolata","Courier",sans-serif;
+	font-size: 90%;
+	font-weight:normal;
+	width:50%;
+	padding-right: 5%;
+	padding-left: 5%;
+	margin-bottom: 5%;
+	position: relative;
+	text-align: left;
+	text-indent: 20px;
+	display:block;
+	height:auto;
+	z-index: 2;
+	border-left: 2px dotted #CD5C5C;
+}
+
+#flickr img {
+}
+
+
+.flickr_img {
+	display:block;
+	float:left;
+	width:44%;
+	height:200px;
+	overflow: hidden;
+	margin:3% 0% 3% 3%;
+	cursor: pointer;
+}
+
+.flickr_img img {
+	vertical-align: middle;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.flickr_pop {
+	display: block;
+	visibility:hidden;
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+	z-index:4;
+	width:50%;
+	height:auto;
+	overflow: hidden;
+}
+
+.flickr_pop img {
+	vertical-align: middle;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+
+/* Content: Text */
+
+#text {
+	font-family: "europa", sans-serif;
+	font-weight:normal;
+	float:right;
+	position: relative;
+	width:50%;
+	padding-right: 5%;
+	padding-left: 5%;
+	margin-bottom: 5%;
+	font-size: 90%;
+	color:#000;
+	text-align:left;
+	text-indent: 20px;
+	vertical-align: middle;
+	border-left: 2px dotted #40E0D0;
+}
+
+#text img {
+	width: 30%;
+	margin:3% 0% 3% 3%;
+	min-width:60px;
+	display:block;
+}
+
+
+/* LIGHTBOX */
+
+/* line 6, ../sass/lightbox.sass */
+#lightboxOverlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background-color: #FFF;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+	opacity: 0.95;
+	display: none;
+}
+
+/* line 15, ../sass/lightbox.sass */
+#lightbox {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 10000;
+	text-align: left;
+	line-height: 14;
+	font-family: 'Montserrat', tahoma, verdana, arial, sans-serif;
+	font-weight: normal;
+	font-size:10px;
+	color:#000000;
+}
+/* line 24, ../sass/lightbox.sass */
+#lightbox img {
+  width: auto;
+  height: auto;
+}
+/* line 27, ../sass/lightbox.sass */
+#lightbox a img {
+  border: none;
+}
+
+/* line 30, ../sass/lightbox.sass */
+.lb-outerContainer {
+  position: relative;
+  background-color: white;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 38, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 39, ../sass/lightbox.sass */
+.lb-container {
+  padding: 10px;
+}
+
+/* line 42, ../sass/lightbox.sass */
+.lb-loader {
+  position: absolute;
+  top: 40%;
+  left: 0%;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+/* line 51, ../sass/lightbox.sass */
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 59, ../sass/lightbox.sass */
+.lb-container > .nav {
+  left: 0;
+}
+
+/* line 62, ../sass/lightbox.sass */
+.lb-nav a {
+  outline: none;
+}
+
+/* line 65, ../sass/lightbox.sass */
+.lb-prev, .lb-next {
+  width: 49%;
+  height: 100%;
+  background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+  /* Trick IE into showing hover */
+  display: block;
+}
+
+/* line 72, ../sass/lightbox.sass */
+.lb-prev {
+  left: 0;
+  float: left;
+}
+
+/* line 76, ../sass/lightbox.sass */
+.lb-next {
+  right: 0;
+  float: right;
+}
+
+/* line 81, ../sass/lightbox.sass */
+.lb-prev:hover {
+  background: url(../images/prev.png) left 48% no-repeat;
+}
+
+/* line 85, ../sass/lightbox.sass */
+.lb-next:hover {
+  background: url(../images/next.png) right 48% no-repeat;
+}
+
+/* line 88, ../sass/lightbox.sass */
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -ms-border-bottom-left-radius: 4px;
+  -o-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -ms-border-bottom-right-radius: 4px;
+  -o-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* line 38, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 95, ../sass/lightbox.sass */
+.lb-data {
+  padding: 0 10px;
+  color: #bbbbbb;
+}
+/* line 98, ../sass/lightbox.sass */
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 14px;
+}
+/* line 103, ../sass/lightbox.sass */
+.lb-data .lb-caption {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 14px;
+	color: #000;
+	text-align: left;
+}
+/* line 107, ../sass/lightbox.sass */
+.lb-data .lb-number {
+	display: block;
+	clear: left;
+	padding-bottom: 1em;
+	font-size: 10px;
+	margin-top: 4px;
+	color: #000;
+	font-family: 'Mate', serif;
+	font-weight: normal;
+	text-align: left;
+}
+/* line 112, ../sass/lightbox.sass */
+.lb-data .lb-close {
+  width: 35px;
+  float: right;
+  padding-bottom: 0.7em;
+  outline: none;
+}
+/* line 117, ../sass/lightbox.sass */
+.lb-data .lb-close:hover {
+  cursor: pointer;
+}
+

@@ -2,10 +2,15 @@
 //, PDF, "pttrns9.pdf"
 
 int numDots = 1000;
+int numRots = 1500;
 int[]ArrayX = new int[numDots];
 int[]ArrayY = new int[numDots];
 int[]ArrayX2 = new int[numDots];
 int[]ArrayY2 = new int[numDots];
+int[]ArrayX3 = new int[numRots];
+int[]ArrayY3 = new int[numRots];
+int[]ArrayX4 = new int[numRots];
+int[]ArrayY4 = new int[numRots];
 
 void setup() {
   size(2560, 4000);
@@ -14,6 +19,10 @@ void setup() {
     ArrayY[i] = (int) random(-height, height);
     ArrayX2[i] = (int) random(ArrayX[i]+random(100, 1000), ArrayX[i]+random(1000, 2000));
     ArrayY2[i] = (int) random(ArrayY[i]+random(100, 1000), ArrayY[i]+random(1000, 2000));
+    ArrayX3[i] = (int) random(-width, width);
+    ArrayY3[i] = (int) random(-height, height);
+    ArrayX4[i] = (int) random(ArrayX3[i]+20, ArrayX3[i]+100);
+    ArrayY4[i] = (int) random(ArrayY3[i]+20, ArrayY3[i]+100); 
   }
   noLoop();
   smooth();
@@ -24,14 +33,11 @@ void draw() {
   float r = random(0,40);
 
   if (r<5) {
-    background(70, 130, 180);
+    background(43, 43, 43);
     for (int i = 0; i < numDots; i++) {
-      noFill();
-      strokeCap(PROJECT);
-      strokeWeight(random(60, 100));
-      stroke(random(0, 255), random(0, 255), random(0, 255), random(60, 100));
-      ellipse(random(-width, width*2), random(-width, height*2), random(-width, width*2), random(-width, height*2));
-      smooth();
+    fill(255);
+    noStroke(); 
+    quad(ArrayX3[i]+random(0,40), ArrayY3[i]+random(0,40), ArrayX4[i]+random(0,200), ArrayY4[i]+random(0,200),ArrayX3[i]-random(0,40), ArrayY3[i]-random(0,40), ArrayX4[i]-random(0,200), ArrayY4[i]-random(0,200));
     }
   } 
   else if (r<10) {
@@ -96,6 +102,6 @@ void draw() {
       strokeCap(PROJECT);
       bezier(ArrayX[i]+random(50, 100), ArrayY[i]+random(50, 100), ArrayX2[i]-random(50, 100), ArrayY2[i]-random(50, 100), ArrayX[i]-random(50, 100), ArrayY[i]-random(50, 100), ArrayX2[i]+random(50, 100), ArrayY2[i]+random(50, 100));
     }
-  }
+  } 
 }
 
