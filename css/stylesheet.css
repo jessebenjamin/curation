@@ -66,7 +66,7 @@ title {
 	width:auto;
 	float:left;
 	height: auto;
-	margin-left: 3%; 
+	margin-left: 15.5%; 
 	position: relative;
 	display: block;
 	padding-bottom:1%;
@@ -134,7 +134,7 @@ title {
 	min-width:20px;
 	display:none;
 	position:fixed;
-	margin-top: 25%;
+	margin-top: 20%;
 	left:1%;
 	float:left;
 	z-index:2;
@@ -151,7 +151,7 @@ title {
 	min-width:20px;
 	display:none;
 	position:fixed;
-	margin-top: 25%;
+	margin-top: 20%;
 	right:1%;
 	float:right;
 	z-index:2;
@@ -167,7 +167,7 @@ title {
 
 #user {
 	float:left;
-	width:25%;
+	width:30%;
 	height:auto;
 	margin-left: 3%;
 	margin-bottom: 5%;
@@ -181,50 +181,75 @@ title {
 	font-size: 120%;
 	font-weight:normal;
 	letter-spacing:0.1em;
-	text-align:left;
+	text-align:center;
 	width: 100%;
 	float: left;
 	display:block;
 	text-transform:capitalize;
 }
 
-/*.firstname {
+.firstname {
 	font-family: "europa","Futura",sans-serif;
-	font-size: 120%;
+	font-size: 100%;
 	font-weight:normal;
-	letter-spacing:0.1em;
+	font-style: normal;
 	text-align:left;
-	float: left;
-	display:block;
+	text-indent:20px;
+	float: none;
+	display:inline;
 	text-transform:capitalize;
 }
 
 .lastname {
 	font-family: "europa","Futura",sans-serif;
-	font-size: 120%;
-	font-weight:normal;
+	font-size: 80%;
+	font-weight:300 !important;
+	font-style: normal;
 	letter-spacing:0.1em;
 	padding-left: 2%;
 	float:left;
 	text-align:left;
 	display:block;
 	text-transform:capitalize;
-}*/
+}
 
 .portrait {
+	text-align: center;
 	display:block;
 	position:relative;
-	float:left;
+	margin-left: auto;
+	margin-top: 3%;
+	margin-right: auto;
 	width:100%;
 }
 
 .portrait img {
 	margin-top: 5%;
-	margin-left: 0%;
+	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 5%;
 	height:auto;
 	max-width:200px;
+}
+
+.quote {
+	font-family: "europa","Futura",sans-serif;
+	font-size: 90%;
+	font-weight:400;
+	font-style:italic;
+	color: #000;
+	letter-spacing:0.1em;
+	height:auto;
+	width: 50%;
+	padding: 5%;
+	margin-top: 10%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+	text-align:center;
+	border-top: 2px dotted #40E0D0;
+	border-bottom: 2px dotted #40E0D0;
+	text-transform:capitalize;
 }
 
 .emoticon {
@@ -248,7 +273,12 @@ title {
 	font-weight:500;
 	padding-left: 10px;
 	display:inline;
-	color: #CD5C5C;
+	color: #40E0D0;
+}
+
+.tags {
+	width:100%;
+	text-indent: 20px;
 }
 
 /* Content: NASA */
@@ -256,8 +286,8 @@ title {
 #star {
 	position: relative;
 	float:left;
-	width: 25%;
-	text-align: left;
+	width: 30%;
+	text-align: center;
 	margin-left: 3%;
 	margin-right: auto;
 	margin-top: 10%;
@@ -270,43 +300,58 @@ title {
 	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 100%;
 	font-weight:normal;
+	text-align: center;
+	width:100%;
 	padding-top: 1%;
 	display:inline-block;
 }
 
 .val1 {
-	font-family: "inconsolata","Courier",sans-serif;
-	font-size: 80%;
+	font-family:"europa","Futura",sans-serif;
+	font-size: 100%;
+	text-indent:0px;
 	font-weight:normal;
-	display:inline-block;
+	float: none;
+	display:inline;
 }
 
 .val2 {
 	font-family: "inconsolata","Courier",sans-serif;
 	font-size: 80%;
 	font-weight:normal;
-	display:inline-block;
+	font-style: normal;
+	float: none;
+	display:inline;
 }
 
 .val3 {
-	font-family: "inconsolata","Courier",sans-serif;
-	font-size: 80%;
+	font-family:"europa","Futura",sans-serif;
+	font-size: 100%;
 	font-weight:normal;
-	display:inline-block;
+	text-indent:0px;
+	text-decoration:underline;
+	float: none;
+	display:inline;
 }
 
 .val4 {
-	font-family: "inconsolata","Courier",sans-serif;
-	font-size: 80%;
+	font-family:"europa","Futura",sans-serif;
+	font-size: 100%;
+	text-transform: uppercase;
 	font-weight:normal;
-	display:inline-block;
+	text-indent:0px;
+	text-decoration:underline;
+	float: none;
+	display:inline;
 }
 
 .val5 {
-	font-family: "inconsolata","Courier",sans-serif;
-	font-size: 80%;
+	font-family:"europa","Futura",sans-serif;
+	font-size: 100%;
+	text-indent:0px;
 	font-weight:normal;
-	display:inline-block;
+	float: none;
+	display:inline;
 }
 
 /* Content: Flickr */
@@ -322,11 +367,10 @@ title {
 	margin-bottom: 5%;
 	position: relative;
 	text-align: left;
-	text-indent: 20px;
 	display:block;
 	height:auto;
 	z-index: 2;
-	border-left: 2px dotted #CD5C5C;
+	border-left: 2px dotted #40E0D0;
 }
 
 #flickr img {
@@ -344,24 +388,6 @@ title {
 }
 
 .flickr_img img {
-	vertical-align: middle;
-	min-width: 100%;
-	min-height: 100%;
-}
-
-.flickr_pop {
-	display: block;
-	visibility:hidden;
-	float: left;
-	margin-left: auto;
-	margin-right: auto;
-	z-index:4;
-	width:50%;
-	height:auto;
-	overflow: hidden;
-}
-
-.flickr_pop img {
 	vertical-align: middle;
 	min-width: 100%;
 	min-height: 100%;
@@ -394,74 +420,86 @@ title {
 	display:block;
 }
 
+::selection {
+	color:#fff;
+	background: #CD5C5C;
+}
+::-moz-selection {
+	color:#fff;
+	background: #CD5C5C;
+}
+
 
 /* LIGHTBOX */
 
-/* line 6, ../sass/lightbox.sass */
-#lightboxOverlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 9999;
-	background-color: #FFF;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
-	opacity: 0.95;
-	display: none;
+body:after {
+  content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
+  display: none;
 }
 
-/* line 15, ../sass/lightbox.sass */
-#lightbox {
-	position: absolute;
-	left: 0;
-	width: 100%;
-	z-index: 10000;
-	text-align: left;
-	line-height: 14;
-	font-family: 'Montserrat', tahoma, verdana, arial, sans-serif;
-	font-weight: normal;
-	font-size:10px;
-	color:#000000;
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #fff;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.95;
+  display: none;
 }
-/* line 24, ../sass/lightbox.sass */
-#lightbox img {
-  width: auto;
+
+.lightbox {
+  font-family:"europa","Futura",sans-serif;
+  position: fixed;
+  top:5% !important;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+}
+
+.lb-image {
+	width:auto !important;
+	height:500px !important;
+}
+
+.lb-image img {
+  width:300%;
   height: auto;
-}
-/* line 27, ../sass/lightbox.sass */
-#lightbox a img {
-  border: none;
+
 }
 
-/* line 30, ../sass/lightbox.sass */
+.lightbox a img {
+  width: 100%;
+  height:auto;
+}
+
 .lb-outerContainer {
   position: relative;
   background-color: white;
   *zoom: 1;
-  width: 250px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
 }
-/* line 38, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+
 .lb-outerContainer:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 39, ../sass/lightbox.sass */
 .lb-container {
-  padding: 10px;
+  width:80%;
+  height:auto;
+  padding: 4px;
 }
 
-/* line 42, ../sass/lightbox.sass */
 .lb-loader {
   position: absolute;
-  top: 40%;
+  top: 43%;
   left: 0%;
   height: 25%;
   width: 100%;
@@ -469,122 +507,116 @@ title {
   line-height: 0;
 }
 
-/* line 51, ../sass/lightbox.sass */
+.lb-cancel {
+  display: block;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  background: url(../images/loading.gif) no-repeat;
+}
+
 .lb-nav {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -25%;
+  right: -25%;
   height: 100%;
-  width: 100%;
+  width: 150%;
   z-index: 10;
 }
 
-/* line 59, ../sass/lightbox.sass */
 .lb-container > .nav {
   left: 0;
 }
 
-/* line 62, ../sass/lightbox.sass */
 .lb-nav a {
   outline: none;
 }
 
-/* line 65, ../sass/lightbox.sass */
 .lb-prev, .lb-next {
   width: 49%;
   height: 100%;
-  background-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+  cursor: pointer;
   /* Trick IE into showing hover */
   display: block;
 }
 
-/* line 72, ../sass/lightbox.sass */
 .lb-prev {
   left: 0;
   float: left;
 }
+.lb-prev:hover {
+  background: url(../images/prev.png) left 48% no-repeat;
+}
 
-/* line 76, ../sass/lightbox.sass */
 .lb-next {
   right: 0;
   float: right;
 }
 
-/* line 81, ../sass/lightbox.sass */
-.lb-prev:hover {
-  background: url(../images/prev.png) left 48% no-repeat;
-}
-
-/* line 85, ../sass/lightbox.sass */
 .lb-next:hover {
   background: url(../images/next.png) right 48% no-repeat;
 }
 
-/* line 88, ../sass/lightbox.sass */
 .lb-dataContainer {
   margin: 0 auto;
   padding-top: 5px;
   *zoom: 1;
   width: 100%;
-  -moz-border-radius-bottomleft: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -ms-border-bottom-left-radius: 4px;
-  -o-border-bottom-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  -ms-border-bottom-right-radius: 4px;
-  -o-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
 }
-/* line 38, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.1/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+
 .lb-dataContainer:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 95, ../sass/lightbox.sass */
 .lb-data {
-  padding: 0 10px;
-  color: #bbbbbb;
-}
-/* line 98, ../sass/lightbox.sass */
-.lb-data .lb-details {
-  width: 85%;
-  float: left;
-  text-align: left;
-  line-height: 14px;
-}
-/* line 103, ../sass/lightbox.sass */
-.lb-data .lb-caption {
-	font-size: 12px;
-	font-weight: normal;
-	line-height: 14px;
-	color: #000;
-	text-align: left;
-}
-/* line 107, ../sass/lightbox.sass */
-.lb-data .lb-number {
-	display: block;
-	clear: left;
-	padding-bottom: 1em;
-	font-size: 10px;
-	margin-top: 4px;
-	color: #000;
-	font-family: 'Mate', serif;
-	font-weight: normal;
-	text-align: left;
-}
-/* line 112, ../sass/lightbox.sass */
-.lb-data .lb-close {
-  width: 35px;
-  float: right;
-  padding-bottom: 0.7em;
-  outline: none;
-}
-/* line 117, ../sass/lightbox.sass */
-.lb-data .lb-close:hover {
-  cursor: pointer;
+  font-family:"europa","Futura",sans-serif;
+  font-weight: lighter;
+  font-size: 100%;
+  padding: 0 4px;
+  color: #000;
 }
 
+.lb-data .lb-details {
+  font-family:"europa","Futura",sans-serif;
+  font-weight: lighter;
+  text-align: left;
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+  font-size: 90%;
+  padding: 0 4px;
+  color: #000;
+}
+
+.lb-data .lb-caption {
+  font-size: 100%;
+  font-weight: lighter;
+  line-height: 1em;
+}
+
+.lb-data .lb-number {
+  background: url(../images/tag.png) top left no-repeat;
+  width: 30px;
+  height: 30px;
+  float: left;
+  line-height: 1.5em;
+  display: inline;
+}
+
+.lb-data .lb-close {
+  display: inline;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(../images/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+}
+
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
