@@ -1,4 +1,4 @@
-int numDots = 2000;
+int numDots = 1000;
 
 //Background Map
 PVector[] v1 = new PVector[numDots];
@@ -8,23 +8,22 @@ PVector[] v4 = new PVector[numDots];
 
 PVector[] v1c = new PVector[numDots];
 PVector[] v2c = new PVector[numDots];
-
 PVector[] wAh = new PVector[numDots];
 
 void setup() {
-  
-  size(2560, 4000);
 
+  size(window.innerWidth, window.innerHeight);
+  
   for (int i = 0; i < numDots; i++) {
     v1[i] = new PVector(random(width), random(height));
-    v2[i] = new PVector(v1[i].x+random(-20, 20), v1[i].y+random(-20, 20));
+    v2[i] = new PVector(v1[i].x+random(-40, 40), v1[i].y+random(-40, 40));
     v3[i] = new PVector(random(width), random(height));
-    v4[i] = new PVector(v3[i].x+random(-20, 20), v3[i].y+random(-20, 20));
+    v4[i] = new PVector(v3[i].x+random(-40, 40), v3[i].y+random(-40, 40));
 
-    v1c[i] = new PVector(v1[i].x+random(-10, 10), v1[i].y+random(-10, 10));
-    v2c[i] = new PVector(v2[i].x+random(-10, 10), v2[i].y+random(-10, 10));
+    v1c[i] = new PVector(v1[i].x+random(-20, 20), v1[i].y+random(-20, 20));
+    v2c[i] = new PVector(v2[i].x+random(-20, 20), v2[i].y+random(-20, 20));
 
-    wAh[i] = new PVector(random(1, 10), random(1, 10));
+    wAh[i] = new PVector(random(1, 20), random(1, 20));
   }
 
   noLoop();
@@ -33,12 +32,12 @@ void setup() {
 
 void draw() {
 
-  float r = random(0,75);
+  float r = random(0, 75);
 
   if (r<5) {
-    background(255);
+    background(64, 224, 208);
     for (int i = 0; i < numDots; i++) {
-      fill(43, 43, 43);
+      fill(205, 92, 92);
       noStroke(); 
       quad(v3[i].x+random(0, 40), v3[i].y+random(0, 40), v4[i].x+random(0, 200), v4[i].y+random(0, 200), v3[i].x-random(0, 40), v3[i].y-random(0, 40), v4[i].x-random(0, 200), v4[i].y-random(0, 200));
     }
@@ -52,7 +51,7 @@ void draw() {
     }
   } 
   else if (r<15) {
-    background(205, 92, 92);
+    background(10);
     for (int i = 0; i < numDots; i++) {
       noStroke();
       fill(random(0, 255), random(0, 255), random(0, 255), random(60, 100));
@@ -89,7 +88,7 @@ void draw() {
     }
   } 
   else if (r<35) {
-    background(255, 48, 48);
+    background(205, 92, 92);
     for (int i = 0; i < numDots; i++) {
       fill(43, 43, 43);
       noStroke();
@@ -108,63 +107,71 @@ void draw() {
   }
   else if (r<45) {
     background(43, 43, 43);
-    for (int i = 0; i < 500; i++) {
+    for (int i = 0; i < numDots; i++) {
       noFill();
       stroke(255); 
       strokeWeight(random(1, 3)); 
-      quad(v1[i].x+random(0, 40), v1[i].y+random(0, 40), v2[i].x+random(0, 200), v2[i].y+random(0, 200), v3[i].x-random(0, 40), v3[i].y-random(0, 40), v4[i].x-random(0, 200), v4[i].y-random(0, 200));
+      line(v1[i].x, v1[i].y, v1[i].x-random(0, 40), v1[i].y-random(0, 40));
     }
   } 
   else if (r<50) {
     background(255, 255, 240);
-    for (int i = 0; i < 400; i++) {
+    for (int i = 0; i < numDots; i++) {
       noFill();
       stroke(255, 215, 0);
-      strokeWeight(1);
-      quad(v1[i].x+random(10, 50), v1[i].y+random(10, 50), v2[i].x-random(10, 50), v2[i].y-random(10, 50), v3[i].x-random(10, 50), v3[i].y-random(10, 50), v4[i].x+random(10, 50), v4[i].y+random(10, 50));
+      strokeWeight(random(5, 10));
+      point(v1[i].x-random(0, 40), v1[i].y-random(0, 40));
     }
   } 
   else if (r<55) {
-    background(0);
-    for (int i = 0; i < 100; i++) {
+    background(0, 0, 25);
+    for (int i = 0; i < numDots; i++) {
       noStroke();
       fill(random(200, 240), random(200, 240), random(200, 240), random(60, 100));
-      quad(v1[i].x+random(10, 50), v1[i].y+random(10, 50), v2[i].x-random(10, 50), v2[i].y-random(10, 50), v3[i].x-random(10, 50), v3[i].y-random(10, 50), v4[i].x+random(10, 50), v4[i].y+random(10, 50));
+      quad(v1[i].x+random(10, 50), v1[i].y+random(10, 50), v2[i].x-random(10, 50), v2[i].y-random(10, 50), v1[i].x-random(10, 50), v1[i].y-random(10, 50), v2[i].x+random(10, 50), v2[i].y+random(10, 50));
     }
   } 
   else if (r<60) {
-    background(255);
+    background(0);
     for (int i = 0; i < numDots; i++) {
       noStroke();
-      fill(0, random(60, 100));
+      fill(64, 224, 208);
       bezier(v1[i].x+random(5, 10), v1[i].y+random(5, 10), v2[i].x-random(5, 10), v2[i].y-random(5, 10), v1[i].x-random(5, 10), v1[i].y-random(5, 10), v2[i].x+random(5, 10), v2[i].y+random(5, 10));
     }
   }
   else if (r<65) {
     background(43, 43, 43);
     for (int i = 0; i < numDots; i++) {
-      stroke(255, random(60, 100));
+      stroke(random(200, 255));
+      strokeWeight(2);
       noFill();
       bezier(v1[i].x+random(5, 10), v1[i].y+random(5, 10), v1c[i].x, v1c[i].y, v2[i].x+random(5, 10), v2[i].y+random(5, 10), v2c[i].x, v2c[i].y);
     }
   }
   else if (r<70) {
-    background(123, 112, 255);
+    background(205, 92, 92);
     for (int i = 0; i < numDots; i++) {
       stroke(255);
       strokeWeight(random(1, 4));
       noFill();
-      ellipse(v1[i].x+random(5, 10), v1[i].y+random(5, 10), wAh[i].x, wAh[i].y);
+      rotate(radians(random(PI, TWO_PI)));
+      rect(v4[i].x+random(5, 10), v4[i].y+random(5, 10), wAh[i].x+random(5, 10), wAh[i].y+random(5, 10));
     }
   }
   else if (r<75) {
-    background(random(200, 240), random(200, 240), random(200, 240), random(60, 100));
+    background(205, 92, 92);
     for (int i = 0; i < numDots; i++) {
-      fill(random(0, 255));
-      noStroke();
-      triangle(v1[i].x-random(5, 10), v1[i].y-random(5, 10), v2[i].x+random(5, 10), v2[i].y+random(5, 10), v1[i].x+random(5, 10), v1[i].y+random(5, 10));
+      stroke(255);
+      strokeWeight(random(1, 4));
+      noFill();
+      triangle(v1[i].x+random(5, 10), v1[i].y+random(5, 10), v2[i].x-random(5, 20), v2[i].y-random(5, 20), v1[i].x+random(5, 30), v1[i].y+random(5, 30));
     }
   }
-}
 
+//  rectMode(CENTER);
+//  noStroke();
+//  fill(255);
+//  rect(width/2, height/2, width-(width/10), height-(height/50));
+  //saveFrame("background-##.png");
+}
 

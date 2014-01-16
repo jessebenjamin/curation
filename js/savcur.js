@@ -1,21 +1,102 @@
 $(document).ready(function (){
 
-  //Setup Content Height ----------------------------------------------------------------------------------------------------
+  //Setup Content Height & Background ----------------------------------------------------------------------------------------
 
-  var height = $( window ).height();
-  var width = $( window ).width();
+  if ($(window).width() <= 780) {
 
-  $('#background').children('canvas').css("height", height);
-  $('#background').children('canvas').css("width", width);
+    $('body').css("font-size", "16px");
+
+    var imgCount = Math.floor(Math.random()*21);
+    var backImg = "background-"+imgCount+".png"; 
+
+    $('#background').css("background", "url(./images/" + backImg + ") top left");
+
+    var height = $( document).height();
+    var width = $( window ).width();
+
+    $('#background').css("min-height", height);
+    $('#background').css("min-width", width);
+    $('#background').css("position", "fixed");
+
+    $(window).load(function() {
+
+      $('#whitespace').css('min-height', height);
+
+    })
+
+  } else {
 
   $(window).load(function() {
-    
-    var heightwhite =  $('#background').children('canvas').height();
-    var heightnum = heightwhite * .0175;
-    var heighttotal = heightwhite - heightnum;
+
+    var height = $( document ).height();
+    var width = $( window ).width();
+
+    var heightnum = height * .0175;
+    var heighttotal = Math.floor(height - heightnum);
+    var heightback = Math.floor(height + heightnum); 
+
+
+    $('#background').css("height", heightback);
+    $('#background').css("width", width);
+
+    $('#background').append("<canvas id='back'></canvas>");
+
+    var sourceList = ['./processing/abstract_if/abstract_if.pde'];
+    var canvasSource = document.querySelector("#back");
+    Processing.loadSketchFromSources(canvasSource, sourceList);
+
+    var canvas = document.getElementById("back");
+
+    cq(canvas).resizePixel(heightback);
 
     $('#whitespace').css('height', heighttotal);
 
+    // $('#background').children('canvas').css('height', heightback);
+    // $('#background').children('canvas').css('width', width);
+
+  })
+  };
+
+  //Get Names ---------------------------------------------------------------------------------------------------------------
+
+
+  var firstname;
+  var lastname;
+
+  namey.get({
+      count: 1,  
+      with_surname: false,  
+      frequency: "all",  
+      callback: function(data) {
+
+      if (data[0] === "" || data[0] === "undefined") {
+        data[0] = "Mohammed";
+      }
+
+      $('.firstname').text(data[0]);
+
+      firstname = data[0];
+
+      $(".person").prepend(firstname + " ");
+      $("title").append(firstname + " ");
+      }
+  });
+
+  namey.get({
+    count: 1,  
+    type: "surname",  
+    frequency: "all",  
+    callback: function(data) {
+
+      if (data[0] === "" || data[0] === "undefined") {
+        data[0] = "Doe";
+      }
+
+      lastname = data[0];
+
+      $(".person").append(lastname);
+      $("title").append(lastname);
+      }
   });
 
   //Setup Login & Friends ---------------------------------------------------------------------------------------------------
@@ -40,11 +121,11 @@ $(document).ready(function (){
       $('#whitespace').css("padding-top", "3%");
       $('#whitespace').css("background-color", "transparent");
       $('#whitespace').css("color", "#fff");
-      $('#whitespace').html("☠");
+      $('#whitespace').html("✞");
     
       setTimeout(function (){
       location.reload();  
-      }, 500);
+      }, 750);
     };
   });
 
@@ -68,35 +149,8 @@ $(document).ready(function (){
     
       setTimeout(function (){
       location.reload();  
-      }, 500);
+      }, 750);
     };
-  });
-
-  //Get Names ---------------------------------------------------------------------------------------------------------------
-
-
-  var firstname;
-  var lastname;
-
-  namey.get({count: 1,  with_surname: false,  frequency: "all",  callback: function(data) {
-      console.log(data);
-      $('.firstname').text(data[0]);
-
-      firstname = data[0];
-
-      $(".person").prepend(firstname + " ");
-      $("title").append(firstname + " ");
-      }
-  });
-
-  namey.get({count: 1,  type: "surname",  frequency: "all",  callback: function(data) {
-      console.log(data);
-
-      lastname = data[0];
-
-      $(".person").append(lastname);
-      $("title").append(lastname);
-      }
   });
 
   var emo = Math.floor(Math.random() * 38);
@@ -130,24 +184,22 @@ $(document).ready(function (){
             }).done(function( data ) {
       $.each( data.items, function( i, item ) {
 
-          $( "<img>" ).attr( "src", item.media.m ).appendTo( "#flickr" );
-          $('.val1').html(item.published);
-
-          href = item.media.m;
-          title = item.title;
           taggs = item.tags;
 
           if (taggs === "") {
             taggs = "thereisnoonehere";
           }
 
+          $( "<img>" ).attr( "src", item.media.m ).wrap("<a></a>").parent().attr("title", taggs).attr("href", item.media.m).attr("data-lightbox",  "gallery").wrap("<div class='flickr_img'></div>").parent().appendTo( "#flickr" );
+          $('.val1').html(item.published);
+
+          //$("#flickr a");
+
           if ( i === 5 ) {
             return false;
           }
-        });
 
-        $("#flickr img").wrap("<a></a>");
-        $("#flickr a").attr("title", taggs).attr("href", href).attr("data-lightbox",href).wrap("<div class='flickr_img'></div>");
+        });
 
       });
 
@@ -168,6 +220,32 @@ $(document).ready(function (){
       });
 
   }, 750);
+
+//Get TEXT ----------------------------------------------------------------------------------------------------------------
+
+  var gibberish = "http://randomtext.me/api/gibberish/p-1/20-40/";
+
+  $.getJSON( gibberish, {
+    tagmode: "any",
+    format: "json"
+  }).done(function(data){
+    console.log(data);
+    $(".quote").append(data.text_out + cemoticon);
+  });
+
+  var musing = "http://hipsterjesus.com/api/";
+
+  var ponder = Math.floor(Math.random() * 3);
+
+  $.getJSON( musing, {
+    paras: ponder,
+    type: "hipster-centric",
+    html: "true",
+    tagmode: "any",
+    format: "json"
+  }).done(function(data){
+    $(".musing").append(data.text);
+  });
 
 //Get NASA ----------------------------------------------------------------------------------------------------------------
 
@@ -192,7 +270,7 @@ $(document).ready(function (){
       format: "json"
     }).done(function(data) {
 
-    console.log(data);
+    //console.log(data);
     r = Math.round(Math.random()*300);
 
     //$('.val1').append(data.response.results[r]._id);
@@ -210,6 +288,9 @@ $(document).ready(function (){
         }
 
   });
+
+
+//Arrows ----------------------------------------------------------------------------------------------------------------
 
 
   var startY = 300;

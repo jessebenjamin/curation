@@ -1,3 +1,12 @@
+@font-face { 
+	font-family: 'Monoxil';
+	src: url('./webfonts/monoxil-webfont.svg#webfont');
+	src: url('./webfonts/monoxil-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('./webfonts/monoxil-webfont.woff') format('woff'),
+	     url('./webfonts/monoxil-webfont.ttf') format('truetype'),
+	     url('./webfonts/monoxil-webfont.svg#webfont') format('svg');
+}
+
 html, body {
 	height:auto;
 	width:100%;
@@ -20,11 +29,14 @@ title {
 	right: 0%;
 	z-index:-1;
 	position: absolute;
+	/*overflow-y:hidden; */
+	background-color: #c3c3c3;
 }
 
 #background canvas {
-	width: auto;
+	width: 100%;
 	height:auto;
+	visibility: hidden;
 	position: absolute;
 }
 
@@ -35,7 +47,6 @@ title {
 	height:auto;
 	background-color: #fff;
 	top:5%;
-	bottom:5%;
 	left: 5%;
 	right: 5%;
 	z-index: 1;
@@ -70,7 +81,7 @@ title {
 	position: relative;
 	display: block;
 	padding-bottom:1%;
-	border-bottom: 1px dashed #000;
+	/*border-bottom: 1px dashed #000;*/
 }
 
 .logo a {
@@ -96,7 +107,7 @@ title {
 	display: block;
 	z-index: 2;
 	padding-bottom:1%;
-	border-bottom: 1px dashed #000;
+	/*border-bottom: 1px dashed #000;*/
 }
 
 .navicons a {
@@ -249,7 +260,6 @@ title {
 	text-align:center;
 	border-top: 2px dotted #40E0D0;
 	border-bottom: 2px dotted #40E0D0;
-	text-transform:capitalize;
 }
 
 .emoticon {
@@ -425,6 +435,10 @@ title {
 	background: #CD5C5C;
 }
 ::-moz-selection {
+	color:#fff;
+	background: #CD5C5C;
+}
+::-webkit-selection {
 	color:#fff;
 	background: #CD5C5C;
 }
