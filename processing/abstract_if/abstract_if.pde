@@ -12,7 +12,7 @@ PVector[] wAh = new PVector[numDots];
 
 void setup() {
 
-  size(window.innerWidth, window.innerHeight);
+  size(window.innerWidth, 4000);
   
   for (int i = 0; i < numDots; i++) {
     v1[i] = new PVector(random(width), random(height));

@@ -29,14 +29,12 @@ title {
 	right: 0%;
 	z-index:-1;
 	position: absolute;
-	/*overflow-y:hidden; */
-	background-color: #c3c3c3;
+	overflow: hidden;
 }
 
 #background canvas {
-	width: 100%;
+	width: auto;
 	height:auto;
-	visibility: hidden;
 	position: absolute;
 }
 

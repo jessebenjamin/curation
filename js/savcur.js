@@ -20,7 +20,10 @@ $(document).ready(function (){
 
     $(window).load(function() {
 
-      $('#whitespace').css('min-height', height);
+      var heightnum = height * .025;
+      var heighttotal = Math.floor(height - heightnum);
+
+      $('#whitespace').css('min-height', heighttotal);
 
     })
 
@@ -28,32 +31,32 @@ $(document).ready(function (){
 
   $(window).load(function() {
 
+    //$('#background').append("<canvas data-processing-sources='./processing/abstract_if/abstract_if.pde'></canvas>");
+    //$('#background canvas').css('min-height', heightback).css('max-width', width);
+
     var height = $( document ).height();
     var width = $( window ).width();
 
-    var heightnum = height * .0175;
+    var heightnum = height * .025;
     var heighttotal = Math.floor(height - heightnum);
     var heightback = Math.floor(height + heightnum); 
 
 
-    $('#background').css("height", heightback);
-    $('#background').css("width", width);
-
+    $('#background').css({"min-height": heightback, "width": width});
     $('#background').append("<canvas id='back'></canvas>");
+    $('#back').css({'min-width': width});
 
+    //'max-height': heightback,
+    
     var sourceList = ['./processing/abstract_if/abstract_if.pde'];
     var canvasSource = document.querySelector("#back");
     Processing.loadSketchFromSources(canvasSource, sourceList);
 
-    var canvas = document.getElementById("back");
+    //var canvas = document.getElementById("back");
 
-    cq(canvas).resizePixel(heightback);
+    //cq(canvas).resizePixel(0.5, 0.25);
 
     $('#whitespace').css('height', heighttotal);
-
-    // $('#background').children('canvas').css('height', heightback);
-    // $('#background').children('canvas').css('width', width);
-
   })
   };
 
