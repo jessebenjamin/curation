@@ -46,6 +46,8 @@ $(document).ready(function (){
     $('#background').append("<canvas id='back'></canvas>");
     $('#back').css({'min-width': width});
 
+    $('#landing').css({'min-width': width/2});
+
     //'max-height': heightback,
     
     var sourceList = ['./processing/abstract_if/abstract_if.pde'];
@@ -156,6 +158,20 @@ $(document).ready(function (){
     };
   });
 
+  $('.logout').click(function(){
+    
+      alert(".get=?naught|nil?-¿");
+
+      window.location = 'index.html';  
+
+  });
+
+  $('#landing .person').click(function(){
+    
+      window.location = 'tour.html';  
+
+  });
+
   var emo = Math.floor(Math.random() * 38);
   var lemo = Math.floor(Math.random() * 38);
   var bemo = Math.floor(Math.random() * 38);
@@ -193,7 +209,7 @@ $(document).ready(function (){
             taggs = "thereisnoonehere";
           }
 
-          $( "<img>" ).attr( "src", item.media.m ).wrap("<a></a>").parent().attr("title", taggs).attr("href", item.media.m).attr("data-lightbox",  "gallery").wrap("<div class='flickr_img'></div>").parent().appendTo( "#flickr" );
+          $( "<img>" ).attr( "src", item.media.m ).attr( "alt", "?=life=null" ).wrap("<a></a>").parent().attr("title", taggs).attr("href", item.media.m).attr("data-lightbox",  "gallery").wrap("<div class='flickr_img'></div>").parent().appendTo( "#flickr" );
           $('.val1').html(item.published);
 
           //$("#flickr a");
@@ -222,9 +238,30 @@ $(document).ready(function (){
         })
       });
 
+     $.getJSON( flickrAPI, {
+          tags: "friend",
+          tagmode: "any",
+          format: "json"
+          }).done(function( data ) {
+      $.each( data.items, function( i, item ) {
+
+        $( "<img>" ).attr( "src", item.media.m ).attr( "alt", "?=friend=null" ).wrap("<a></a>").parent().attr("href", "http://www.savage-curation.com/tour.html").wrap("<div class='friends_img'></div>").parent().appendTo( "#friends" );
+
+        if ( i === 40 ) {
+            return false;
+        }
+
+        })
+      });
+
+
   }, 750);
 
 //Get TEXT ----------------------------------------------------------------------------------------------------------------
+
+  var friendcount = Math.round(Math.random()*1000);
+
+  $('.friendcount').html(friendcount + " " + "Friends");
 
   var gibberish = "http://randomtext.me/api/gibberish/p-1/20-40/";
 

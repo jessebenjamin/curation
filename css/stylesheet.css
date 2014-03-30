@@ -50,10 +50,77 @@ title {
 	z-index: 1;
 }
 
+/* Landing Page */
+
+#landing {
+	font-family: "europa","Futura",sans-serif;
+	font-size: 125%;
+	text-align: center;	
+	width: 50%;
+	letter-spacing:0.5em;
+	margin-top: 8%; 
+	background-color: #fff;
+	height: 30%;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.savcurbig {
+	width:80px;
+	height:80px;
+	text-align: center;
+	position: relative;
+	display: block;
+	z-index: 2;
+	padding-top:5%;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.savcurbig img {
+	width: 100%;
+	height: 100%;
+}
+
+#landing_teaser {
+	font-family: "inconsolata","Monoxil",serif;
+	font-size: 80%;
+	font-weight:normal;
+	letter-spacing:0.1em;
+	text-align:center;
+	width: auto;
+	color:#000;
+	text-transform:capitalize;
+	background-color: #fff;
+	padding-top:5%;
+	padding-bottom:15%;
+}
+
+#landing .person {
+	font-family: "europa","Futura",sans-serif;
+	font-size: 100%;
+	font-weight:normal;
+	letter-spacing:0.1em;
+	text-align:center;
+	width: 40%;
+	margin-left: 30%;
+	margin-right: 30%;
+	color:#000;
+	text-transform:capitalize;
+	padding-top:2%;
+	padding-bottom:2%;
+	margin-top: 25px;
+	border: 2px dashed #40E0D0;
+	border-radius: 5px;
+	cursor:pointer;
+}
+
 /* Content: Structure */
 
 #wrap {
-	width:100%;
+	width:85%;
+	margin-top: 50px; 
+	margin-left: 10%; 
 	height:auto;
 	position: relative;
 	z-index: 2;
@@ -62,24 +129,22 @@ title {
 /* Navigation */
 
 #nav {
-	width: 100%;
+	width: 15%;
 	z-index: 2;
-	height:60px;
-	position:relative;
+	height:auto;
+	position:fixed;
 	float:left;
 	margin:30px 0px 20px 0;
 	display: block;
 }
 
 .logo {
-	width:auto;
+	width:100%;
 	float:left;
 	height: auto;
-	margin-left: 15.5%; 
 	position: relative;
 	display: block;
-	padding-bottom:1%;
-	/*border-bottom: 1px dashed #000;*/
+	padding-bottom:10%;
 }
 
 .logo a {
@@ -90,22 +155,25 @@ title {
 .logo img {
 	min-height: 30px;
 	min-width: 30px;
+	margin-left: auto;
+	margin-right: auto;
 	text-decoration: none;
-	display:inline;
+	display:block;
 	cursor: pointer;
+	padding-bottom: 10%;
+	border-bottom: 2px dotted #40E0D0;
 }
 
 .navicons {
-	width:auto;
+	width:100%;
 	float:right;
 	height: auto;
-	margin-right: 3%; 
 	text-align: center;
 	position: relative;
 	display: block;
 	z-index: 2;
-	padding-bottom:1%;
-	/*border-bottom: 1px dashed #000;*/
+	padding-top:5%;
+	padding-bottom:5%;
 }
 
 .navicons a {
@@ -114,28 +182,15 @@ title {
 }
 
 .navicons img {
-	min-height: 30px;
-	min-width: 30px;
+	min-height: 50px;
+	min-width: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:25px;
+	margin-top:25px;
 	text-decoration: none;
-	display:inline;
+	display:block;
 	cursor: pointer;
-}
-
-
-.border {
-	width:50%;
-	height: auto;
-	margin-left: 25%;
-	margin-right: 25%;
-	position: relative;
-	display: block;
-	z-index: -1;
-}
-
-.border img {
-	width:100%;
-	height:auto;
-	padding:5% 0% 5% 0%;
 }
 
 .left {
@@ -178,7 +233,7 @@ title {
 	float:left;
 	width:30%;
 	height:auto;
-	margin-left: 3%;
+	margin-left: 8%;
 	margin-bottom: 5%;
 	position: relative;
 	display:block;
@@ -258,6 +313,7 @@ title {
 	text-align:center;
 	border-top: 2px dotted #40E0D0;
 	border-bottom: 2px dotted #40E0D0;
+	border-radius: 3px;
 }
 
 .emoticon {
@@ -286,7 +342,46 @@ title {
 
 .tags {
 	width:100%;
-	text-indent: 20px;
+	text-align: justify;
+}
+
+/* Content: Friends */
+
+#friends {
+	width:auto;
+	max-width: 280px;
+	height:auto;
+	margin-left: 15%;
+	padding: 2.5%;
+	position: absolute;
+	z-index: 2;
+}
+
+#friends img {
+}
+
+.friendcount {
+	font-family: "inconsolata","Monoxil",serif;
+	font-size: 80%;	
+	text-align: center;
+	width: 100%;
+	padding: 10px 0px 10px 0px;
+}
+
+.friends_img {
+	display:block;
+	float:left;
+	width:50px;
+	height:50px;
+	overflow: hidden;
+	margin:3% 0% 3% 3%;
+	cursor: pointer;
+}
+
+.friends_img img {
+	vertical-align: middle;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 /* Content: NASA */
@@ -305,7 +400,7 @@ title {
 }
 
 .longlat {
-	font-family: "inconsolata","Courier",sans-serif;
+	font-family: "inconsolata","Monoxil",serif;
 	font-size: 100%;
 	font-weight:normal;
 	text-align: center;
@@ -366,19 +461,18 @@ title {
 
 #flickr { 
 	float:right;
-	font-family: "inconsolata","Courier",sans-serif;
+	font-family: "inconsolata","Monoxil",serif;
 	font-size: 90%;
 	font-weight:normal;
-	width:50%;
-	padding-right: 5%;
-	padding-left: 5%;
+	width:60%;
 	margin-bottom: 5%;
 	position: relative;
 	text-align: left;
 	display:block;
 	height:auto;
 	z-index: 2;
-	border-left: 2px dotted #40E0D0;
+	padding-bottom: 5%;
+	border-bottom: 2px dotted #40E0D0;
 }
 
 #flickr img {
@@ -409,16 +503,13 @@ title {
 	font-weight:normal;
 	float:right;
 	position: relative;
-	width:50%;
-	padding-right: 5%;
-	padding-left: 5%;
+	width:60%;
 	margin-bottom: 5%;
 	font-size: 90%;
 	color:#000;
-	text-align:left;
+	text-align:justify;
 	text-indent: 20px;
 	vertical-align: middle;
-	border-left: 2px dotted #40E0D0;
 }
 
 #text img {
